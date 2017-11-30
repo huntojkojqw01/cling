@@ -1,0 +1,509 @@
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.message.header.CallbackHeader setString
+WARNING: Discarding non-http callback URL: ftp://127.0.0.1/bar
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, replacing invalid device type token '!@#' with: ---
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token '!@#' with: ---
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(123x123, MIME: image/png) urn:not_a_URL': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: urn]
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(0x0, MIME: null) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing width: Icon(0x0, MIME: null) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing height: Icon(0x0, MIME: null) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(0x0, MIME: null) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing width: Icon(0x0, MIME: foo/bar) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing height: Icon(0x0, MIME: foo/bar) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(0x0, MIME: foo/bar) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(123x456, MIME: foo/bar) foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.StateVariableTypeDetails validate
+WARNING: UPnP specification violation, allowed string values don't contain default value: A
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, no device type token, defaulting to UNKNOWN: urn:schemas-upnp-org:device::1
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, replacing invalid device type token 'pbda:tuner' with: pbda-tuner
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:tuner' with: pbda-tuner
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:Foo
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.ServiceId valueOf
+WARNING: UPnP specification violation, no service ID token, defaulting to UNKNOWN: urn:upnp-org:serviceId:
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: RenderingControl
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: AVTransport
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.meta.StateVariableAllowedValueRange <init>
+WARNING: UPnP specification violation, allowed value range minimum '100' is greater than maximum '0', switching values.
+Nov 30, 2017 12:20:19 AM org.fourthline.cling.model.types.ServiceId valueOf
+WARNING: UPnP specification violation, trying a simple colon-split of: urn:foo:ThisSegmentShouldBeNamed'service':baz
+Nov 30, 2017 12:20:24 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:20:24 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) ResultStatus
+Nov 30, 2017 12:21:10 AM org.fourthline.cling.protocol.RetrieveRemoteDescriptors describe
+WARNING: Device descriptor retrieval failed, no response: http://127.0.0.1:0/dev/MY-DEVICE-123/desc
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/jpeg) content://airtwist/thumb/root/1': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/png) content://airtwist/thumb/root/2': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:tuner' with: pbda-tuner
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:cas' with: pbda-cas
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:eventing' with: pbda-eventing
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:gpnvs' with: pbda-gpnvs
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:mux' with: pbda-mux
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:guidedatadelivery' with: pbda-guidedatadelivery
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:debug' with: pbda-debug
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:drm' with: pbda-drm
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:diseqccommand' with: pbda-diseqccommand
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, replacing invalid device type token 'tv:pbda' with: tv-pbda
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:11 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, no device type token, defaulting to UNKNOWN: urn:schemas-upnp-org:device::1
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateRoot
+WARNING: Wrong XML namespace declared on root element: null
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:RenderingControl
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:ConnectionManager
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:AVTransport
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:90:21:55:CE:6F:4D, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(64x64, MIME: null) android.png
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateSpecVersion
+WARNING: Unsupported UDA minor version, ignoring: 1
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.types.ServiceId valueOf
+WARNING: UPnP specification violation, no service ID token, defaulting to UNKNOWN: urn:upnp-org:serviceId:
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing width: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing height: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(0x0, MIME: null) null': [ValidationError (Class: Icon, propertyName: uri): URL is required]
+Nov 30, 2017 12:21:12 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateServiceList
+WARNING: UPnP specification violation, skipping invalid service declaration. Can't parse service type string (namespace/type/version): (null)
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Regular parsing failed: The prefix "dlna" for element "dlna:X_DLNADOC" is not bound.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Removing leading garbage didn't work: The prefix "dlna" for element "dlna:X_DLNADOC" is not bound.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl fixMissingNamespaces
+WARNING: Fixing missing namespace declaration for: dlna
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Fixing namespace prefix didn't work: The prefix "pv" for element "pv:extension" is not bound.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl fixMissingNamespaces
+WARNING: Fixing missing namespace declaration for: pv
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Regular parsing failed: The prefix "dlna" for element "dlna:X_DLNADOC" is not bound.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Removing leading garbage didn't work: The prefix "dlna" for element "dlna:X_DLNADOC" is not bound.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl fixMissingNamespaces
+WARNING: Fixing missing namespace declaration for: dlna
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Regular parsing failed: Content is not allowed in trailing section.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Removing leading garbage didn't work: Content is not allowed in trailing section.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl fixGarbageTrailingChars
+WARNING: Detected garbage characters after <root> node, removing
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Regular parsing failed: The reference to entity "N:DGND3700" must end with the ';' delimiter.
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Removing leading garbage didn't work: The reference to entity "N:DGND3700" must end with the ';' delimiter.
+Nov 30, 2017 12:21:13 AM org.seamless.xml.XmlPullParserUtils fixXMLEntities
+WARNING: fixed badly encoded entities in XML
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Regular parsing failed: Can't parse device type string (namespace/type/version): 
+Nov 30, 2017 12:21:13 AM org.fourthline.cling.binding.xml.RecoveringUDA10DeviceDescriptorBinderImpl describe
+WARNING: Removing leading garbage didn't work: Can't parse device type string (namespace/type/version): 
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/jpeg) content://airtwist/thumb/root/1': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/png) content://airtwist/thumb/root/2': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:tuner' with: pbda-tuner
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:cas' with: pbda-cas
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:eventing' with: pbda-eventing
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:gpnvs' with: pbda-gpnvs
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:mux' with: pbda-mux
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:guidedatadelivery' with: pbda-guidedatadelivery
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:debug' with: pbda-debug
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:drm' with: pbda-drm
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:diseqccommand' with: pbda-diseqccommand
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, replacing invalid device type token 'tv:pbda' with: tv-pbda
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateIconList
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:14 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, no device type token, defaulting to UNKNOWN: urn:schemas-upnp-org:device::1
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateRoot
+WARNING: Wrong XML namespace declared on root element: null
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:RenderingControl
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:ConnectionManager
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:AVTransport
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:90:21:55:CE:6F:4D, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(64x64, MIME: null) android.png
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateSpecVersion
+WARNING: Unsupported UDA minor version, ignoring: 1
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceId valueOf
+WARNING: UPnP specification violation, no service ID token, defaulting to UNKNOWN: urn:upnp-org:serviceId:
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing width: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing height: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(0x0, MIME: null) null': [ValidationError (Class: Icon, propertyName: uri): URL is required]
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateServiceList
+WARNING: UPnP specification violation, skipping invalid service declaration. Can't parse service type string (namespace/type/version): (null)
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$IconHandler endElement
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$IconHandler endElement
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/jpeg) content://airtwist/thumb/root/1': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(72x72, MIME: image/png) content://airtwist/thumb/root/2': [ValidationError (Class: Icon, propertyName: uri): URL must be valid: unknown protocol: content]
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:tuner' with: pbda-tuner
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:cas' with: pbda-cas
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:eventing' with: pbda-eventing
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:gpnvs' with: pbda-gpnvs
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:mux' with: pbda-mux
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:guidedatadelivery' with: pbda-guidedatadelivery
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:debug' with: pbda-debug
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:drm' with: pbda-drm
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:diseqccommand' with: pbda-diseqccommand
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, replacing invalid device type token 'tv:pbda' with: tv-pbda
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ContentDirectory
+Nov 30, 2017 12:21:15 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, fixing broken Service ID: ConnectionManager
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'dri2:debug' with: dri2-debug
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceType valueOf
+WARNING: UPnP specification violation, replacing invalid service type token 'pbda:useractivity' with: pbda-useractivity
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$IconHandler endElement
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$IconHandler endElement
+WARNING: Invalid icon depth '', using 16 as default: java.lang.NumberFormatException: For input string: ""
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.DeviceType valueOf
+WARNING: UPnP specification violation, no device type token, defaulting to UNKNOWN: urn:schemas-upnp-org:device::1
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:RenderingControl
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:ConnectionManager
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.UDAServiceId valueOf
+WARNING: UPnP specification violation, recovering from Eyecon garbage: urn:upnp-orgerviceId:urnchemas-upnp-orgervice:AVTransport
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:90:21:55:CE:6F:4D, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(64x64, MIME: null) android.png
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$SpecVersionHandler endElement
+WARNING: Unsupported UDA minor version, ignoring: 1
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.types.ServiceId valueOf
+WARNING: UPnP specification violation, no service ID token, defaulting to UNKNOWN: urn:upnp-org:serviceId:
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing mime type: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing width: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing height: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: UPnP specification violation of: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:13ab6680-00ea-1000-9b5a-00214cc35bca, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Icon validate
+WARNING: Invalid icon, missing bitmap depth: Icon(0x0, MIME: null) null
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.model.meta.Device <init>
+WARNING: Discarding invalid 'Icon(0x0, MIME: null) null': [ValidationError (Class: Icon, propertyName: uri): URL is required]
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$ServiceHandler endElement
+WARNING: UPnP specification violation, skipping invalid service declaration. Can't parse service type string (namespace/type/version): (null)
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$ServiceHandler endElement
+WARNING: UPnP specification violation, skipping invalid service declaration. Can't parse service ID string (namespace/id): (null)
+Nov 30, 2017 12:21:16 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:17 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateSpecVersion
+WARNING: Unsupported UDA major version, ignoring: 1234
+Nov 30, 2017 12:21:17 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderImpl hydrateSpecVersion
+WARNING: Unsupported UDA minor version, ignoring: 456
+Nov 30, 2017 12:21:17 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$SpecVersionHandler endElement
+WARNING: Unsupported UDA major version, ignoring: 1234
+Nov 30, 2017 12:21:17 AM org.fourthline.cling.binding.xml.UDA10DeviceDescriptorBinderSAXImpl$SpecVersionHandler endElement
+WARNING: Unsupported UDA minor version, ignoring: 456
+Nov 30, 2017 12:21:17 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:20 AM org.fourthline.cling.protocol.sync.ReceivingAction executeSync
+WARNING: Received without Content-Type: (StreamRequestMessage) POST /dev/MY-DEVICE-123/svc/upnp-org/SwitchPower/action
+Nov 30, 2017 12:21:20 AM org.fourthline.cling.protocol.sync.ReceivingAction executeSync
+WARNING: Received invalid Content-Type '(ContentTypeHeader) 'some/randomtype'': (StreamRequestMessage) POST /some/random/123/uri
+Nov 30, 2017 12:21:21 AM org.fourthline.cling.model.types.UnsignedVariableInteger <init>
+WARNING: Invalid negative integer value '-1', assuming value 0!
+Nov 30, 2017 12:21:24 AM org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl readBody
+WARNING: Trying to recover from invalid SOAP XML request: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: org.xmlpull.v1.XmlPullParserException: unterminated entity ref (position:TEXT foo&bar@6:32 in java.io.InputStreamReader@1d477ed) 
+Nov 30, 2017 12:21:24 AM org.seamless.xml.XmlPullParserUtils fixXMLEntities
+WARNING: fixed badly encoded entities in XML
+Nov 30, 2017 12:21:24 AM org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl readBody
+WARNING: Trying to recover from invalid SOAP XML request: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: org.xmlpull.v1.XmlPullParserException: PI must not start with xml (position:unknown @16:23 in java.io.InputStreamReader@7a06ec) 
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: expected: '>' actual: '?' (position:END_TAG </e>@32:5 in java.io.InputStreamReader@5c8d3f) 
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Partial read of GENA event properties (probably due to truncated XML)
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: PI must not start with xml (position:unknown 
+
+
+
+
+
+
+
+
+
+@11:5 in java.io.InputStreamReader@125bf5b) 
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: attr value delimiter missing! (position:START_TAG <font size='urn:schemas-upnp-org:event-1-0'>@34:15 in java.io.InputStreamReader@162f559) 
+Nov 30, 2017 12:21:25 AM org.seamless.xml.XmlPullParserUtils fixXMLEntities
+WARNING: fixed badly encoded entities in XML
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: name expected (position:START_TAG <sEnvelopesencodingStyle>@23:55 in java.io.InputStreamReader@313fcc) 
+Nov 30, 2017 12:21:25 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: unterminated entity ref (position:TEXT <Event xmlns="ur...@30:137 in java.io.InputStreamReader@131ef10) 
+Nov 30, 2017 12:21:25 AM org.seamless.xml.XmlPullParserUtils fixXMLEntities
+WARNING: fixed badly encoded entities in XML
+Nov 30, 2017 12:21:26 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: Attr.value missing f. urn:schemas-upnp-org:metadata-1-0 (position:START_TAG <AVTransportURIMetaData val='<DIDL-Lite xmlns=' urn:schemas-upnp-org:metadata-1-0='null'>@14:81 in java.io.InputStreamReader@325e14) 
+Nov 30, 2017 12:21:26 AM org.fourthline.cling.transport.impl.RecoveringGENAEventProcessorImpl readBody
+WARNING: Trying to recover from invalid GENA XML event: org.fourthline.cling.model.UnsupportedDataException: Can't transform message payload: name expected (position:START_TAG <CurrentTrackMetaData val='<DIDL-Lite' xmlns='urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:upnp='urn:schemas-upnp-org:metadata-1-0/upnp/'>@12:320 in java.io.InputStreamReader@2fc1d) 
+Nov 30, 2017 12:21:27 AM org.fourthline.cling.protocol.ProtocolFactoryImpl createReceivingSync
+WARNING: Fixing trailing garbage in event message path: /dev/1234/upnp-org/SwitchPower/event/cb192.168.10.38
+Switch is: true
+Switch is: false
+Switch is: true
+Switch is: false
+Switch is: true
+Switch is: false
+Switch is: true
+Switch is: false
+Switch is: true
+Successfully called action!
+Established: uuid:b77752fe-defc-4feb-ba5b-0202ddf70417
+Event: 0
+Status is: 0
+Event: 1
+Status is: 1
+Established: uuid:919fbe95-1796-400a-a404-79d7610f4123
+Event: 0
+Status is: 0
+Event: 1
+Status is: 1
+Switch is: true
+Client's address is: /10.0.0.1
+Received message on: /10.0.0.2
+Client's user agent is: foo/bar
+Client's custom header is: foo
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.protocol.RetrieveRemoteDescriptors describe
+WARNING: Could not hydrate device or its services from descriptor: (RemoteDevice) Identity: (RemoteDeviceIdentity) UDN: uuid:MY-DEVICE-123, Descriptor: http://127.0.0.1:0/dev/MY-DEVICE-123/desc, Root: true
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.protocol.RetrieveRemoteDescriptors describe
+WARNING: Cause was: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 6; A pseudo attribute name is expected. 
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
+Nov 30, 2017 12:21:32 AM org.fourthline.cling.binding.xml.UDA10ServiceDescriptorBinderImpl generateActionArgument
+WARNING: UPnP specification violation: Not producing <retval> element to be compatible with WMP12: (ActionArgument, OUT) RetTargetValue
