@@ -12,10 +12,10 @@ import org.fourthline.cling.registry.*;
  *
  * @author Han
  */
-public class BinaryLightClient implements Runnable{
+public class ControlPoint implements Runnable{
     public static void main(String[] args) throws Exception {
         // Start a user thread that runs the UPnP stack
-        Thread clientThread = new Thread(new BinaryLightClient());
+        Thread clientThread = new Thread(new ControlPoint());
         clientThread.setDaemon(false);
         clientThread.start();
 
