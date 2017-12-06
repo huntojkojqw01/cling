@@ -62,10 +62,10 @@ public class Speaker implements Runnable {
                         "image/jpg", 48, 48, 8,
                         getClass().getResource("speaker.jpg")
                 );
-        LocalService<SwitchPower> switchPowerService =
-                new AnnotationLocalServiceBinder().read(SwitchPower.class);
+        LocalService<Chousei> switchPowerService =
+                new AnnotationLocalServiceBinder().read(Chousei.class);
         switchPowerService.setManager(
-                new DefaultServiceManager(switchPowerService, SwitchPower.class)
+                new DefaultServiceManager(switchPowerService, Chousei.class)
         );
         return new LocalDevice(identity, type, details, icon, switchPowerService);
         /* Several services can be bound to the same device:

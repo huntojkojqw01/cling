@@ -62,10 +62,10 @@ public class Phone implements Runnable{
                         "image/png", 48, 48, 8,
                         getClass().getResource("phone.png")
                 );
-        LocalService<SwitchPower> switchPowerService =
-                new AnnotationLocalServiceBinder().read(SwitchPower.class);
+        LocalService<Renraku> switchPowerService =
+                new AnnotationLocalServiceBinder().read(Renraku.class);
         switchPowerService.setManager(
-                new DefaultServiceManager(switchPowerService, SwitchPower.class)
+                new DefaultServiceManager(switchPowerService, Renraku.class)
         );
         return new LocalDevice(identity, type, details, icon, switchPowerService);
         /* Several services can be bound to the same device:
