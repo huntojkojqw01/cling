@@ -12,10 +12,10 @@ import org.fourthline.cling.registry.RegistrationException;
  *
  * @author Han
  */
-public class BinaryLightServer implements Runnable{    
+public class Speaker implements Runnable {
     public static void main(String[] args) throws Exception {
         // Start a user thread that runs the UPnP stack
-        Thread serverThread = new Thread(new BinaryLightServer());
+        Thread serverThread = new Thread(new Speaker());
         serverThread.setDaemon(false);
         serverThread.start();
     }
@@ -43,24 +43,24 @@ public class BinaryLightServer implements Runnable{
         throws ValidationException, LocalServiceBindingException, IOException {
         DeviceIdentity identity =
                 new DeviceIdentity(
-                        UDN.uniqueSystemIdentifier("Demo Binary Light")
+                        UDN.uniqueSystemIdentifier("Demo Speaker")
                 );
         DeviceType type =
-                new UDADeviceType("BinaryLight", 1);
+                new UDADeviceType("SpeakerType", 1);
         DeviceDetails details =
                 new DeviceDetails(
-                        "Friendly Binary Light",
-                        new ManufacturerDetails("ACME"),
+                        "Speaker By Hero",
+                        new ManufacturerDetails("HERO"),
                         new ModelDetails(
-                                "BinLight2000",
-                                "A demo light with on/off switch.",
+                                "Speaker2017",
+                                "A demo speaker with on/off volume.",
                                 "v1"
                         )
                 );
         Icon icon =
                 new Icon(
-                        "image/png", 48, 48, 8,
-                        getClass().getResource("icon.png")
+                        "image/jpg", 48, 48, 8,
+                        getClass().getResource("speaker.jpg")
                 );
         LocalService<SwitchPower> switchPowerService =
                 new AnnotationLocalServiceBinder().read(SwitchPower.class);
@@ -74,6 +74,5 @@ public class BinaryLightServer implements Runnable{
                 new LocalService[] {switchPowerService, myOtherService}
         );
         */
-
     }
 }
