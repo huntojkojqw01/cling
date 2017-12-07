@@ -39,7 +39,7 @@ public class ControlPoint implements Runnable{
     }
     private RegistryListener createRegistryListener(final UpnpService upnpService) {
         return new DefaultRegistryListener() {
-            ServiceId serviceId = new UDAServiceId("SwitchPower");
+            ServiceId serviceId = new UDAServiceId("Renraku");
             @Override
             public void remoteDeviceAdded(Registry registry, RemoteDevice device) {
                 Service switchPower;

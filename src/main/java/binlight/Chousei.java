@@ -1,5 +1,6 @@
 package binlight;
 import org.fourthline.cling.binding.annotations.*;
+import java.beans.PropertyChangeSupport;
 /**
  *
  * @author Han
@@ -9,6 +10,13 @@ import org.fourthline.cling.binding.annotations.*;
         serviceType = @UpnpServiceType(value = "Chousei", version = 1)
 )
 public class Chousei {
+    private final PropertyChangeSupport propertyChangeSupport;
+    public Chousei() {
+        this.propertyChangeSupport = new PropertyChangeSupport(this);
+    }
+    public PropertyChangeSupport getPropertyChangeSupport() {
+        return propertyChangeSupport;
+    }
     @UpnpStateVariable(defaultValue = "0", sendEvents = false)
     private boolean target = false;
     @UpnpStateVariable(defaultValue = "0")
@@ -21,12 +29,14 @@ public class Chousei {
         target = newTargetValue;
         status = newTargetValue;
         System.out.println("Switch is: " + status);
+        getPropertyChangeSupport().firePropertyChange("Status", null, status);
     }
     @UpnpAction
     public void setVolume(@UpnpInputArgument(name = "NewVolumeValue")
                           int newVolumeValue) {
         volume = newVolumeValue;        
         System.out.println("Current volume is: " + volume);
+        getPropertyChangeSupport().firePropertyChange("Volume", null, volume);
     }
     @UpnpAction(out = @UpnpOutputArgument(name = "RetTargetValue"))
     public boolean getTarget() {
