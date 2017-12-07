@@ -30,7 +30,7 @@ public class Chousei {
         status = newTargetValue;
         System.out.println("Switch is: " + status);
         getPropertyChangeSupport().firePropertyChange("Status", null, status);
-    }
+    }    
     @UpnpAction
     public void setVolume(@UpnpInputArgument(name = "NewVolumeValue")
                           int newVolumeValue) {
