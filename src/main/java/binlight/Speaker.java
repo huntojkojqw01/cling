@@ -7,6 +7,8 @@ import org.fourthline.cling.model.*;
 import org.fourthline.cling.model.meta.*;
 import org.fourthline.cling.model.types.*;
 import java.io.IOException;
+import org.fourthline.cling.model.action.ActionExecutor;
+import org.fourthline.cling.model.action.ActionInvocation;
 import org.fourthline.cling.registry.RegistrationException;
 /**
  *
@@ -20,7 +22,7 @@ public class Speaker implements Runnable {
         serverThread.setDaemon(false);
         serverThread.start();
         SpeakerView.speaker_view_main();
-    }
+    }    
     @Override
     public void run() {
         try {
@@ -30,17 +32,29 @@ public class Speaker implements Runnable {
                 public void run() {
                     upnpService.shutdown();
                 }
-            });
+            });            
+            
             device=createDevice();
-            System.err.println(device);
+            System.out.println("This is: "+device); 
+            setVolume(555);
+            
             // Add the bound local device to the registry
             upnpService.getRegistry().addDevice(
                     device
-            );         
+            );            
         } catch (IOException | LocalServiceBindingException | ValidationException | RegistrationException ex) {
             System.err.println("Exception occured: " + ex);
             ex.printStackTrace(System.err);
             System.exit(1);
+        }
+    }
+    public void setVolume(int newVolume){
+        LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Chousei"));        
+        if(chouSeiService!=null){                
+            Action action=chouSeiService.getAction("SetVolume");
+            if(action!=null){
+                chouSeiService.getExecutor(action).execute(new SetActionInvocation(chouSeiService,action,"NewVolumeValue",newVolume));
+            }                
         }
     }
     private LocalDevice createDevice()
@@ -67,7 +81,7 @@ public class Speaker implements Runnable {
                         getClass().getResource("speaker.jpg")
                 );
         LocalService<Chousei> myService =
-                new AnnotationLocalServiceBinder().read(Chousei.class);
+                new AnnotationLocalServiceBinder().read(Chousei.class);        
         myService.setManager(
                 new DefaultServiceManager(myService, Chousei.class)
         );
@@ -78,7 +92,7 @@ public class Speaker implements Runnable {
                 new LocalService[] {myService, myOtherService}
         );
         */
-    }
+    }    
 }
 class SpeakerView extends javax.swing.JFrame {
 
@@ -167,8 +181,7 @@ class SpeakerView extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:        
         System.out.println("abc");
     }                                              
 

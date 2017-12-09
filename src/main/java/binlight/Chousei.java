@@ -17,19 +17,19 @@ public class Chousei {
     public PropertyChangeSupport getPropertyChangeSupport() {
         return propertyChangeSupport;
     }
-    @UpnpStateVariable(defaultValue = "0", sendEvents = false)
-    private boolean target = false;
     @UpnpStateVariable(defaultValue = "0")
-    private boolean status = false;
+    private boolean power = false;    
     @UpnpStateVariable(defaultValue = "0")
     private int volume = 0;
     @UpnpAction
-    public void setTarget(@UpnpInputArgument(name = "NewTargetValue")
-                          boolean newTargetValue) {
-        target = newTargetValue;
-        status = newTargetValue;
-        System.out.println("Switch is: " + status);
-        getPropertyChangeSupport().firePropertyChange("Status", null, status);
+    public void setPower(@UpnpInputArgument(name = "NewPowerValue")
+                          boolean newPowerValue) {
+        power = newPowerValue;
+        if(power==true)
+            System.out.println("Speaker is ON.");
+        else
+            System.out.println("Speaker is OFF.");        
+        getPropertyChangeSupport().firePropertyChange("Power", null, power);
     }    
     @UpnpAction
     public void setVolume(@UpnpInputArgument(name = "NewVolumeValue")
@@ -38,18 +38,14 @@ public class Chousei {
         System.out.println("Current volume is: " + volume);
         getPropertyChangeSupport().firePropertyChange("Volume", null, volume);
     }
-    @UpnpAction(out = @UpnpOutputArgument(name = "RetTargetValue"))
-    public boolean getTarget() {
-        return target;
-    }
-    @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatus"))
-    public boolean getStatus() {
+    @UpnpAction(out = @UpnpOutputArgument(name = "ResultPowerValue"))
+    public boolean getPower() {
         // If you want to pass extra UPnP information on error:
         // throw new ActionException(ErrorCode.ACTION_NOT_AUTHORIZED);
-        return status;
+        return power;
     }
-    @UpnpAction(out = @UpnpOutputArgument(name = "RetVolumeValue"))
+    @UpnpAction(out = @UpnpOutputArgument(name = "ResultVolumeValue"))    
     public int getVolume() {
         return volume;
-    }
+    }    
 }

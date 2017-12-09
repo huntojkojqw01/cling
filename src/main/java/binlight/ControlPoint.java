@@ -83,7 +83,19 @@ class SetTargetActionInvocation extends ActionInvocation {
         super(service.getAction("SetTarget"));
         try {
             // Throws InvalidValueException if the value is of wrong type
-            setInput("NewTargetValue", true);
+            setInput("NewTargetValue", true);            
+        } catch (InvalidValueException ex) {
+            System.err.println(ex.getMessage());
+            System.exit(1);
+        }
+    }
+}
+class SetActionInvocation extends ActionInvocation {
+    public SetActionInvocation(Service service,Action action,String argumentName,Object objectValue) {
+        super(action);        
+        try {
+            // Throws InvalidValueException if the value is of wrong type            
+            setInput(argumentName, objectValue);
         } catch (InvalidValueException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
