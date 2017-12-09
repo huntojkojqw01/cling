@@ -7,8 +7,10 @@ import org.fourthline.cling.model.*;
 import org.fourthline.cling.model.meta.*;
 import org.fourthline.cling.model.types.*;
 import java.io.IOException;
-import org.fourthline.cling.model.action.ActionExecutor;
+import org.fourthline.cling.controlpoint.ActionCallback;
+import org.fourthline.cling.model.action.ActionArgumentValue;
 import org.fourthline.cling.model.action.ActionInvocation;
+import org.fourthline.cling.model.message.UpnpResponse;
 import org.fourthline.cling.registry.RegistrationException;
 /**
  *
@@ -16,13 +18,12 @@ import org.fourthline.cling.registry.RegistrationException;
  */
 public class Speaker implements Runnable {    
     private LocalDevice device;
-    public static void main(String[] args) throws Exception {
-        // Start a user thread that runs the UPnP stack
-        Thread serverThread = new Thread(new Speaker());
-        serverThread.setDaemon(false);
-        serverThread.start();
-        SpeakerView.speaker_view_main();
-    }    
+//    public static void main(String[] args) throws Exception {
+//        // Start a user thread that runs the UPnP stack
+//        Thread serverThread = new Thread(new Speaker());
+//        serverThread.setDaemon(false);
+//        serverThread.start();        
+//    }    
     @Override
     public void run() {
         try {
@@ -33,14 +34,13 @@ public class Speaker implements Runnable {
                     upnpService.shutdown();
                 }
             });            
-            
             device=createDevice();
-            System.out.println("This is: "+device); 
+            System.out.println("truoc "+getVolume());
             setVolume(555);
-            
+            System.out.println("sau "+getVolume());
             // Add the bound local device to the registry
             upnpService.getRegistry().addDevice(
-                    device
+                device
             );            
         } catch (IOException | LocalServiceBindingException | ValidationException | RegistrationException ex) {
             System.err.println("Exception occured: " + ex);
@@ -48,15 +48,50 @@ public class Speaker implements Runnable {
             System.exit(1);
         }
     }
+    public int getVolume(){
+        int result=0;
+        LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Chousei"));        
+        if(chouSeiService!=null){                
+            Action action=chouSeiService.getAction("GetVolume");
+            if(action!=null){
+                GetActionInvocation actionInvocation = new GetActionInvocation(action);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {                                                       
+                        System.out.println("GetVolume: OK");                       
+                    }
+                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
+                result=(int)(actionInvocation.getOutput("ResultVolumeValue").getValue());
+            }                
+        }
+        return result;        
+    }
     public void setVolume(int newVolume){
         LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Chousei"));        
         if(chouSeiService!=null){                
             Action action=chouSeiService.getAction("SetVolume");
             if(action!=null){
-                chouSeiService.getExecutor(action).execute(new SetActionInvocation(chouSeiService,action,"NewVolumeValue",newVolume));
+                SetActionInvocation actionInvocation = new SetActionInvocation(action,"NewVolumeValue",newVolume);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {
+                        System.out.println("SetVolume: OK");
+                    }
+                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
             }                
         }
     }
+
     private LocalDevice createDevice()
         throws ValidationException, LocalServiceBindingException, IOException {
         DeviceIdentity identity =
@@ -94,138 +129,20 @@ public class Speaker implements Runnable {
         */
     }    
 }
-class SpeakerView extends javax.swing.JFrame {
-
-    /**
-     * Creates new form NewJFrame
-     */
-    public SpeakerView() {
-        initComponents();
-    }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
-
-        jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jSlider1 = new javax.swing.JSlider();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Demo Speaker");
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 51)));
-
-        jToggleButton1.setText("ON/OFF");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Volume");
-
-        jLabel2.setText("50");
-        jLabel2.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(60, 60, 60))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        pack();
-    }// </editor-fold>                        
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:        
-        System.out.println("abc");
-    }                                              
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void speaker_view_main() {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+class SetActionInvocation extends ActionInvocation {
+    public SetActionInvocation(Action action,String argumentName,Object objectValue) {
+        super(action);        
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SpeakerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SpeakerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SpeakerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SpeakerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            // Throws InvalidValueException if the value is of wrong type            
+            setInput(argumentName, objectValue);
+        } catch (InvalidValueException ex) {
+            System.err.println(ex.getMessage());
+            System.exit(1);
         }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SpeakerView().setVisible(true);
-            }
-        });
     }
-
-    // Variables declaration - do not modify                     
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSlider jSlider1;
-    private javax.swing.JToggleButton jToggleButton1;
-    // End of variables declaration                   
+}
+class GetActionInvocation extends ActionInvocation {
+    public GetActionInvocation(Action action) {
+        super(action);        
+    }
 }

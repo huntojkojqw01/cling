@@ -90,8 +90,8 @@ class SetTargetActionInvocation extends ActionInvocation {
         }
     }
 }
-class SetActionInvocation extends ActionInvocation {
-    public SetActionInvocation(Service service,Action action,String argumentName,Object objectValue) {
+class SetActionInvocation1 extends ActionInvocation {
+    public SetActionInvocation1(Service service,Action action,String argumentName,Object objectValue) {
         super(action);        
         try {
             // Throws InvalidValueException if the value is of wrong type            
