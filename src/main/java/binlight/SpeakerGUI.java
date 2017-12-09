@@ -18,6 +18,9 @@
  */
 package binlight;
 
+import javax.swing.JSlider;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Han
@@ -43,42 +46,73 @@ public class SpeakerGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
+        PowerButton = new javax.swing.JToggleButton();
+        VolumeSlider = new javax.swing.JSlider();
+        VolumeValue = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setText("Power");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        PowerButton.setText("Power");
+        PowerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                PowerButtonActionPerformed(evt);
             }
         });
+
+        VolumeSlider.setOrientation(javax.swing.JSlider.VERTICAL);
+        VolumeSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                VolumeSliderStateChanged(evt);
+            }
+        });
+
+        VolumeValue.setText("50");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(PowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(VolumeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(VolumeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                .addGap(45, 45, 45))
+                .addComponent(VolumeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VolumeValue)
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:        
-        System.out.println(speaker);
-        speaker.setVolume(123);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void PowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PowerButtonActionPerformed
+        // TODO add your handling code here:       
+        speaker.setPower(this.PowerButton.isSelected());
+    }//GEN-LAST:event_PowerButtonActionPerformed
+
+    private void VolumeSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_VolumeSliderStateChanged
+        // TODO add your handling code here:
+        JSlider slider = this.VolumeSlider;
+        if(!slider.getValueIsAdjusting())
+            speaker.setVolume((int)this.VolumeSlider.getValue());
+        else
+            this.VolumeValue.setText(String.valueOf(slider.getValue()));
+    }//GEN-LAST:event_VolumeSliderStateChanged
 
     /**
      * @param args the command line arguments
@@ -117,6 +151,8 @@ public class SpeakerGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton PowerButton;
+    private javax.swing.JSlider VolumeSlider;
+    private javax.swing.JLabel VolumeValue;
     // End of variables declaration//GEN-END:variables
 }

@@ -58,7 +58,7 @@ public class Speaker implements Runnable {
                 (new ActionCallback(actionInvocation) {
                     @Override
                     public void success(ActionInvocation invocation) {                                                       
-                        System.out.println("GetVolume: OK");                       
+//                        System.out.println("GetVolume: OK");                       
                     }
                     
                     @Override
@@ -80,7 +80,7 @@ public class Speaker implements Runnable {
                 (new ActionCallback(actionInvocation) {
                     @Override
                     public void success(ActionInvocation invocation) {
-                        System.out.println("SetVolume: OK");
+//                        System.out.println("SetVolume: OK");
                     }
                     
                     @Override
@@ -91,7 +91,49 @@ public class Speaker implements Runnable {
             }                
         }
     }
-
+    public boolean getPower(){
+        boolean result=false;
+        LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Chousei"));        
+        if(chouSeiService!=null){                
+            Action action=chouSeiService.getAction("GetPower");
+            if(action!=null){
+                GetActionInvocation actionInvocation = new GetActionInvocation(action);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {                                                       
+//                        System.out.println("GetPower: OK");                       
+                    }
+                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
+                result=(boolean)(actionInvocation.getOutput("ResultPowerValue").getValue());
+            }                
+        }
+        return result;        
+    }
+    public void setPower(boolean newPower){
+        LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Chousei"));        
+        if(chouSeiService!=null){                
+            Action action=chouSeiService.getAction("SetPower");
+            if(action!=null){
+                SetActionInvocation actionInvocation = new SetActionInvocation(action,"NewPowerValue",newPower);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {
+//                        System.out.println("SetPower: OK");
+                    }
+                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
+            }                
+        }
+    }
     private LocalDevice createDevice()
         throws ValidationException, LocalServiceBindingException, IOException {
         DeviceIdentity identity =
