@@ -18,8 +18,10 @@
  */
 package binlight;
 
+import android.os.SystemClock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JSlider;
-import javax.swing.JToggleButton;
 
 /**
  *
@@ -31,10 +33,28 @@ public class SpeakerGUI extends javax.swing.JFrame {
      * Creates new form SpeakerGUI
      */
     private final Speaker speaker;
-    public SpeakerGUI() {
+    public SpeakerGUI(){
         initComponents();
         speaker= new Speaker();
         speaker.run();
+        final SpeakerGUI tmp = this;
+        Thread invisible;
+        invisible = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    tmp.PowerButton.setSelected(speaker.getPower());
+                    tmp.VolumeSlider.setValue(speaker.getVolume());
+                    tmp.VolumeValue.setText(String.valueOf(tmp.VolumeSlider.getValue()));
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(SpeakerGUI.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+        invisible.start();
     }
 
     /**
@@ -60,6 +80,7 @@ public class SpeakerGUI extends javax.swing.JFrame {
         });
 
         VolumeSlider.setOrientation(javax.swing.JSlider.VERTICAL);
+        VolumeSlider.setName("VolumeSlider"); // NOI18N
         VolumeSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 VolumeSliderStateChanged(evt);
@@ -144,6 +165,7 @@ public class SpeakerGUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new SpeakerGUI().setVisible(true);
             }

@@ -10,8 +10,8 @@ import java.beans.PropertyChangeSupport;
         serviceType = @UpnpServiceType(value = "Chousei", version = 1)
 )
 public class Chousei {
-    private final PropertyChangeSupport propertyChangeSupport;
-    public Chousei() {
+    private final PropertyChangeSupport propertyChangeSupport;    
+    public Chousei(){        
         this.propertyChangeSupport = new PropertyChangeSupport(this);
     }
     public PropertyChangeSupport getPropertyChangeSupport() {
@@ -36,7 +36,7 @@ public class Chousei {
                           int newVolumeValue) {
         volume = newVolumeValue;        
         System.out.println("Current volume is: " + volume);
-        getPropertyChangeSupport().firePropertyChange("Volume", null, volume);
+        getPropertyChangeSupport().firePropertyChange("Volume", null, volume);        
     }
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultPowerValue"))
     public boolean getPower() {

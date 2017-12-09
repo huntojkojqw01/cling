@@ -8,7 +8,6 @@ import org.fourthline.cling.model.meta.*;
 import org.fourthline.cling.model.types.*;
 import java.io.IOException;
 import org.fourthline.cling.controlpoint.ActionCallback;
-import org.fourthline.cling.model.action.ActionArgumentValue;
 import org.fourthline.cling.model.action.ActionInvocation;
 import org.fourthline.cling.model.message.UpnpResponse;
 import org.fourthline.cling.registry.RegistrationException;
@@ -34,10 +33,10 @@ public class Speaker implements Runnable {
                     upnpService.shutdown();
                 }
             });            
-            device=createDevice();
+            device=createDevice();            
             System.out.println("truoc "+getVolume());
             setVolume(555);
-            System.out.println("sau "+getVolume());
+//            System.out.println("sau "+getVolume());
             // Add the bound local device to the registry
             upnpService.getRegistry().addDevice(
                 device
@@ -58,7 +57,7 @@ public class Speaker implements Runnable {
                 (new ActionCallback(actionInvocation) {
                     @Override
                     public void success(ActionInvocation invocation) {                                                       
-//                        System.out.println("GetVolume: OK");                       
+//                        System.out.println("GetVolume: OK");                      
                     }
                     
                     @Override
