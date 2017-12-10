@@ -12,13 +12,16 @@ import org.fourthline.cling.registry.*;
  *
  * @author Han
  */
-public class ControlPoint implements Runnable{
+public class ControlPoint extends ControlPointGUI implements Runnable{
+    private final javax.swing.JTextArea cpTextArea;
+    public ControlPoint(){
+        cpTextArea=this.getCPArea();
+    }
     public static void main(String[] args) throws Exception {
         // Start a user thread that runs the UPnP stack
         Thread clientThread = new Thread(new ControlPoint());
         clientThread.setDaemon(false);
         clientThread.start();
-
     }
     @Override
     public void run() {
@@ -26,50 +29,53 @@ public class ControlPoint implements Runnable{
             UpnpService upnpService = new UpnpServiceImpl();
             // Add a listener for device registration events
             upnpService.getRegistry().addListener(
-                    createRegistryListener(upnpService)
+                    createRegistryListener(upnpService,"Chousei")
+            );
+            upnpService.getRegistry().addListener(
+                    createRegistryListener(upnpService,"Renraku")
             );
             // Broadcast a search message for all devices
             upnpService.getControlPoint().search(
                     new STAllHeader()
-            );
+            );            
         } catch (Exception ex) {
             System.err.println("Exception occured: " + ex);
             System.exit(1);
-        }
+        }        
     }
-    private RegistryListener createRegistryListener(final UpnpService upnpService) {
+    private RegistryListener createRegistryListener(final UpnpService upnpService,final String serviceID) {
         return new DefaultRegistryListener() {
-            ServiceId serviceId = new UDAServiceId("Renraku");
+            ServiceId serviceId = new UDAServiceId(serviceID);
             @Override
             public void remoteDeviceAdded(Registry registry, RemoteDevice device) {
-                Service switchPower;
-                if ((switchPower = device.findService(serviceId)) != null) {
-                    System.out.println("Service discovered: " + switchPower);
-                    executeAction(upnpService, switchPower);
+                Service chouseiService;
+                if ((chouseiService = device.findService(serviceId)) != null) {
+                    System.out.println("Device is: "+ device);
+                    System.out.println("Service discovered: " + chouseiService);
+                    cpTextArea.append(chouseiService.getServiceId().toString()+"\n");                    
                 }
             }
             @Override
             public void remoteDeviceRemoved(Registry registry, RemoteDevice device) {
-                Service switchPower;
-                if ((switchPower = device.findService(serviceId)) != null) {
-                    System.out.println("Service disappeared: " + switchPower);
+                Service chouseiService;
+                if ((chouseiService = device.findService(serviceId)) != null) {
+                    System.out.println("Device is: "+ device);
+                    System.out.println("Service disappeared: " + chouseiService);                    
+                    cpTextArea.setText(cpTextArea.getText().replace(chouseiService.getServiceId().toString()+"\n", ""));
                 }
             }
-            private void executeAction(UpnpService upnpService, Service switchPowerService) {
+            private void executeAction(UpnpService upnpService, Service service) {
                 ActionInvocation setTargetInvocation =
-                    new SetTargetActionInvocation(switchPowerService);
+                    new SetTargetActionInvocation(service);
                 // Executes asynchronous in the background
                 upnpService.getControlPoint().execute(
                     new ActionCallback(setTargetInvocation) {
                         @Override
-                        public void success(ActionInvocation invocation) {
-                            assert invocation.getOutput().length == 0;
+                        public void success(ActionInvocation invocation) {                            
                             System.out.println("Successfully called action!");
                         }
                         @Override
-                        public void failure(ActionInvocation invocation,
-                                            UpnpResponse operation,
-                                            String defaultMsg) {
+                        public void failure(ActionInvocation invocation,UpnpResponse operation,String defaultMsg) {
                             System.err.println(defaultMsg);
                         }
                     }
@@ -80,11 +86,11 @@ public class ControlPoint implements Runnable{
 }
 class SetTargetActionInvocation extends ActionInvocation {
     public SetTargetActionInvocation(Service service) {
-        super(service.getAction("SetTarget"));
+        super(service.getAction("SetVolume"));
         try {
             // Throws InvalidValueException if the value is of wrong type
-            setInput("NewTargetValue", true);
-            System.out.println("CP goi action :hahaha");
+            setInput("NewVolumeValue", 12);
+            System.out.println("CP goi action thanh cong");
         } catch (InvalidValueException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
