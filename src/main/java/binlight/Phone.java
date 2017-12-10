@@ -7,6 +7,9 @@ import org.fourthline.cling.model.*;
 import org.fourthline.cling.model.meta.*;
 import org.fourthline.cling.model.types.*;
 import java.io.IOException;
+import org.fourthline.cling.controlpoint.ActionCallback;
+import org.fourthline.cling.model.action.ActionInvocation;
+import org.fourthline.cling.model.message.UpnpResponse;
 import org.fourthline.cling.registry.RegistrationException;
 /**
  *
@@ -19,6 +22,7 @@ public class Phone implements Runnable{
         serverThread.setDaemon(false);
         serverThread.start();
     }
+    private LocalDevice device;
     @Override
     public void run() {
         try {
@@ -28,16 +32,60 @@ public class Phone implements Runnable{
                 public void run() {
                     upnpService.shutdown();
                 }
-            });            
+            });
+            device=createDevice();
+            getStatus();
             // Add the bound local device to the registry
             upnpService.getRegistry().addDevice(
-                    createDevice()
-            );         
+                    device
+            );            
         } catch (IOException | LocalServiceBindingException | ValidationException | RegistrationException ex) {
             System.err.println("Exception occured: " + ex);
             ex.printStackTrace(System.err);
             System.exit(1);
         }
+    }
+    public void setStatus(boolean newStatus){
+        LocalService chouSeiService=device.findService(new ServiceId("upnp-org", "Renraku"));        
+        if(chouSeiService!=null){                
+            Action action=chouSeiService.getAction("SetStatus");
+            if(action!=null){
+                SetActionInvocation actionInvocation = new SetActionInvocation(action,"NewStatusValue",newStatus);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {
+//                        System.out.println("SetStatus: OK");
+                    }                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
+            }                
+        }
+    }
+    public boolean getStatus(){
+        boolean result=false;
+        LocalService renRakuService=device.findService(new ServiceId("upnp-org", "Renraku"));        
+        if(renRakuService!=null){                
+            Action action=renRakuService.getAction("GetStatus");
+            if(action!=null){
+                GetActionInvocation actionInvocation = new GetActionInvocation(action);
+                (new ActionCallback(actionInvocation) {
+                    @Override
+                    public void success(ActionInvocation invocation) {                                                       
+//                        System.out.println("GetStatus: OK");                       
+                    }
+                    
+                    @Override
+                    public void failure(ActionInvocation invocation, UpnpResponse operation, String defaultMsg) {
+                        System.out.println(defaultMsg);
+                    }
+                }).run();
+                result=(boolean)(actionInvocation.getOutput("ResultStatusValue").getValue());
+            }                
+        }
+        return result;        
     }
     private LocalDevice createDevice()
         throws ValidationException, LocalServiceBindingException, IOException {
@@ -62,16 +110,16 @@ public class Phone implements Runnable{
                         "image/png", 48, 48, 8,
                         getClass().getResource("phone.png")
                 );
-        LocalService<Renraku> switchPowerService =
+        LocalService<Renraku> myService =
                 new AnnotationLocalServiceBinder().read(Renraku.class);
-        switchPowerService.setManager(
-                new DefaultServiceManager(switchPowerService, Renraku.class)
+        myService.setManager(
+                new DefaultServiceManager(myService, Renraku.class)
         );
-        return new LocalDevice(identity, type, details, icon, switchPowerService);
+        return new LocalDevice(identity, type, details, icon, myService);
         /* Several services can be bound to the same device:
         return new LocalDevice(
                 identity, type, details, icon,
-                new LocalService[] {switchPowerService, myOtherService}
+                new LocalService[] {myService, myOtherService}
         );
         */
 

@@ -71,6 +71,8 @@ public class SpeakerGUI extends javax.swing.JFrame {
         VolumeValue = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("DemoSpeaker");
+        setResizable(false);
 
         PowerButton.setText("Power");
         PowerButton.addActionListener(new java.awt.event.ActionListener() {

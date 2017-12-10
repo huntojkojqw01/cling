@@ -83,7 +83,8 @@ class SetTargetActionInvocation extends ActionInvocation {
         super(service.getAction("SetTarget"));
         try {
             // Throws InvalidValueException if the value is of wrong type
-            setInput("NewTargetValue", true);            
+            setInput("NewTargetValue", true);
+            System.out.println("CP goi action :hahaha");
         } catch (InvalidValueException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
