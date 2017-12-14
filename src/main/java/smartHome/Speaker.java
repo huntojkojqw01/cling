@@ -119,7 +119,7 @@ public class Speaker implements Runnable {
                 (new ActionCallback(actionInvocation) {
                     @Override
                     public void success(ActionInvocation invocation) {
-//                        System.out.println("SetPower: OK");
+                        System.out.println("SetPower: OK");
                     }
                     
                     @Override

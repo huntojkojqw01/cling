@@ -1,7 +1,9 @@
 package smartHome;
 import java.awt.Color;
+import java.awt.Image;
 import org.fourthline.cling.binding.annotations.*;
 import java.beans.PropertyChangeSupport;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Han
@@ -32,13 +34,13 @@ public class Chousei extends SpeakerGUI{
         volumeLabel=this.getVolumeLabel();
     }
     private void PowerButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:       
+        // TODO add your handling code here: 
         setPower(powerButton.isSelected());
     }
     private void VolumeSliderStateChanged(javax.swing.event.ChangeEvent evt) {                                          
         // TODO add your handling code here:        
         if(!volumeSlider.getValueIsAdjusting())
-            setVolume((int)volumeSlider.getValue());
+            setVolume((int)volumeSlider.getValue()); 
         else
             volumeLabel.setText(String.valueOf(volumeSlider.getValue()));
     }  
@@ -49,22 +51,26 @@ public class Chousei extends SpeakerGUI{
     private boolean power = false;    
     @UpnpStateVariable(defaultValue = "0")
     private int volume = 0;
-    @UpnpAction
+    @UpnpAction// đây là hàm set bật tắt cái Speaker:
     public void setPower(@UpnpInputArgument(name = "NewPowerValue")
                           boolean newPowerValue) {
         power = newPowerValue;
         powerButton.setSelected(power);
+        ImageIcon icon;
         if(power==true){            
-            powerButton.setText("TURN OFF");
-//            powerButton.setBackground(Color.green);
+            icon = new ImageIcon("src/main/resources/on-switch.png");
         }            
         else{
-            powerButton.setText("TURN ON");
-//            powerButton.setBackground(Color.red);
-        }             
+            icon = new ImageIcon("src/main/resources/off-switch.png");
+        }
+        Image img = icon.getImage();
+        Image newimg = img.getScaledInstance( powerButton.getWidth(), powerButton.getHeight(),  java.awt.Image.SCALE_SMOOTH ) ;  
+        icon = new ImageIcon( newimg );
+        powerButton.setIcon(icon);
+        
         getPropertyChangeSupport().firePropertyChange("Power", null, power);
     }    
-    @UpnpAction
+    @UpnpAction 
     public void setVolume(@UpnpInputArgument(name = "NewVolumeValue")
                           int newVolumeValue) {
         if(newVolumeValue<0)        volume=0;
