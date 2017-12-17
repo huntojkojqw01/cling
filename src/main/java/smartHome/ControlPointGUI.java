@@ -55,6 +55,28 @@ public class ControlPointGUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ResultArea = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
+        SDeviceBox = new javax.swing.JComboBox<>();
+        SServiceBox = new javax.swing.JComboBox<>();
+        SVariableBox = new javax.swing.JComboBox<>();
+        DDeviceBox = new javax.swing.JComboBox<>();
+        DServiceBox = new javax.swing.JComboBox<>();
+        DVariableBox = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ListArea = new javax.swing.JTextArea();
+        SCheckBox = new javax.swing.JCheckBox();
+        DCheckBox = new javax.swing.JCheckBox();
+        SSpinner = new javax.swing.JSpinner();
+        DSpinner = new javax.swing.JSpinner();
+        SetButton = new javax.swing.JButton();
+        UnSetButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ControlPoint");
@@ -130,15 +152,125 @@ public class ControlPointGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab1", jPanel1);
 
+        ListArea.setEditable(false);
+        ListArea.setColumns(20);
+        ListArea.setRows(5);
+        jScrollPane3.setViewportView(ListArea);
+
+        SCheckBox.setText("jCheckBox1");
+
+        DCheckBox.setText("jCheckBox2");
+
+        SetButton.setBackground(new java.awt.Color(0, 204, 102));
+        SetButton.setText("SET");
+
+        UnSetButton.setBackground(new java.awt.Color(255, 0, 0));
+        UnSetButton.setText("UNSET");
+
+        jLabel1.setText("Device");
+
+        jLabel2.setText("Service");
+
+        jLabel3.setText("StateVariable");
+
+        jLabel4.setText("Device");
+
+        jLabel5.setText("Service");
+
+        jLabel6.setText("StateVariable");
+
+        jLabel7.setText("IF");
+
+        jLabel8.setText("THEN");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(DDeviceBox, 0, 97, Short.MAX_VALUE)
+                                    .addComponent(SDeviceBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DServiceBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(SServiceBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel6))
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(SVariableBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(DVariableBox, 0, 87, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(SCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DSpinner)
+                                    .addComponent(SSpinner)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(SetButton)
+                        .addGap(114, 114, 114)
+                        .addComponent(UnSetButton))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(jLabel8)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SDeviceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SServiceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SVariableBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SCheckBox)
+                    .addComponent(SSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel8)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DDeviceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DServiceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DVariableBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DCheckBox)
+                    .addComponent(DSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SetButton)
+                    .addComponent(UnSetButton))
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         jTabbedPane1.addTab("tab2", jPanel2);
@@ -190,6 +322,22 @@ public class ControlPointGUI extends javax.swing.JFrame {
     public javax.swing.JTextArea getResultArea(){
         return ResultArea;
     }
+    
+    public javax.swing.JCheckBox getDCheckBox(){return DCheckBox;}
+    public javax.swing.JComboBox<String> getDDeviceBox(){return DDeviceBox;}
+    public javax.swing.JComboBox<String> getDServiceBox(){return DServiceBox;}
+    public javax.swing.JSpinner getDSpinner(){return DSpinner;}
+    public javax.swing.JComboBox<String> getDVariableBox(){return DVariableBox;}
+    
+    public javax.swing.JCheckBox getSCheckBox(){return SCheckBox;}
+    public javax.swing.JComboBox<String> getSDeviceBox(){return SDeviceBox;}
+    public javax.swing.JComboBox<String> getSServiceBox(){return SServiceBox;}
+    public javax.swing.JSpinner getSSpinner(){return SSpinner;}
+    public javax.swing.JComboBox<String> getSVariableBox(){return SVariableBox;}   
+    
+    public javax.swing.JButton getSetButton(){return SetButton;} 
+    public javax.swing.JButton getUnSetButton(){return UnSetButton;}
+    public javax.swing.JTextArea getListArea(){return ListArea;} 
     /**
      * @param args the command line arguments
      */
@@ -229,16 +377,38 @@ public class ControlPointGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ActionBox;
     private javax.swing.JComboBox<String> ArgumentBox;
     private javax.swing.JButton CallActionButton;
+    private javax.swing.JCheckBox DCheckBox;
+    private javax.swing.JComboBox<String> DDeviceBox;
+    private javax.swing.JComboBox<String> DServiceBox;
+    private javax.swing.JSpinner DSpinner;
+    private javax.swing.JComboBox<String> DVariableBox;
     private javax.swing.JComboBox<String> DeviceBox;
     private javax.swing.JTextArea InfoArea;
+    private javax.swing.JTextArea ListArea;
     private javax.swing.JTextArea ResultArea;
+    private javax.swing.JCheckBox SCheckBox;
+    private javax.swing.JComboBox<String> SDeviceBox;
+    private javax.swing.JComboBox<String> SServiceBox;
+    private javax.swing.JSpinner SSpinner;
+    private javax.swing.JComboBox<String> SVariableBox;
     private javax.swing.JComboBox<String> ServiceBox;
+    private javax.swing.JButton SetButton;
+    private javax.swing.JButton UnSetButton;
     private javax.swing.JCheckBox ValueCheckBox;
     private javax.swing.JSpinner ValueSpinner;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
