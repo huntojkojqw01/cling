@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
@@ -40,8 +42,10 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private Service gservice=null;
     private Action gaction=null;
     private ActionArgument gargument=null;
+    private final Map<RemoteDevice, HashMap> deviceMap;
     
     public ControlPoint(){
+        deviceMap =new HashMap<RemoteDevice, HashMap>();           
         upnpService = new UpnpServiceImpl();
         infoArea = this.getInfoArea();
         deviceBox = this.getDeviceBox();
@@ -126,9 +130,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         if(deviceBox.getSelectedItem()!=null){            
             deviceBox.setVisible(true);        
             gdevice = upnpService.getRegistry().getRemoteDevice((UDN) deviceBox.getSelectedItem(), rootPaneCheckingEnabled);
-    //        System.out.println(remoteDevice);
-            infoArea.setText(gdevice.getDetails().getFriendlyName());
-            infoArea.append(getInfoDevice(gdevice,null,null));
+    //        System.out.println(remoteDevice);            
+            infoArea.setText(getInfoDevice(gdevice));
             serviceBox.removeAllItems();
             for (RemoteService service1 : gdevice.getServices()) {
     //            System.out.println(service1);
@@ -277,9 +280,11 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             @Override
             public void remoteDeviceAdded(Registry registry, RemoteDevice device) {
 //                Service service;
-                System.out.println("Added : "+ device);                
-                deviceBox.addItem(device.getIdentity().getUdn());    
+                System.out.println("Added : "+ device);
+                Map<String, StateVariableValue> map = new HashMap<String, StateVariableValue>();
                 
+                deviceBox.addItem(device.getIdentity().getUdn());                
+                deviceMap.put(device, (HashMap) map);
                 for (RemoteService service : device.getServices()) {
                     SubscriptionCallback callback = new SubscriptionCallback(service, 600) { // Timeout in seconds
 
@@ -302,16 +307,20 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 
                         @Override
                         public void eventReceived(GENASubscription sub) {//
-
                             System.out.println("Event number "+sub.getCurrentSequence().getValue()+" from "+sub.getSubscriptionId());
-                            Map<String, StateVariableValue> values = sub.getCurrentValues();
-                            
+                            Map<String, StateVariableValue> values = sub.getCurrentValues();                            
+                            Map<String, StateVariableValue> deviceValues = deviceMap.get(service.getDevice());                            
                             for (Map.Entry<String, StateVariableValue> entry : values.entrySet()) {
                                 String key = entry.getKey();
-                                StateVariableValue value = entry.getValue();
-                                System.out.println("   "+key+" is "+value);
-                                
-                            }
+                                StateVariableValue value = entry.getValue();//                              
+                                if(deviceValues.containsKey(key)){
+                                    deviceValues.remove(key);                                    
+                                }
+                                deviceValues.put(key, value);
+                            }                                                  
+                            if(service.getDevice().equals(gdevice))
+                                infoArea.setText(getInfoDevice(gdevice));                                
+                            
                             StateVariableValue status = values.get("Status");                            
                             
                             if(status != null){
@@ -320,8 +329,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                                 for (RemoteDevice remoteDevice : upnpService.getRegistry().getRemoteDevices()) {
                                     tmpService = remoteDevice.findService(new UDAServiceType("Chousei"));
                                     if(tmpService != null){
-//                                        System.out.println("tim thay "+tmpService);
-                                            System.out.println(status.getValue());
+//                                      System.out.println(status.getValue());
                                         executeAction(upnpService, tmpService, "SetPower", "NewPowerValue", status.getValue());
                                     }        
                                 }
@@ -360,26 +368,35 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         return dateFormat.format(date); //2016/11/16 12:08:43
     }
 
-    private String getInfoService(RemoteService service,String stateVariable,Object value){
+    private String getInfoService(RemoteService service){
         String string = "";
+        StateVariableValue stateVariableValue = null;
+        Map<String, StateVariableValue> values = deviceMap.get(service.getDevice());
         if(service!=null){
-            for (StateVariable<RemoteService> stateVariable1 : service.getStateVariables()) {
-                if(stateVariable!=null &&  stateVariable.equals(stateVariable1.getName()))
-                    string += "\n       |___"+stateVariable1.getName()+": "+value;
-                else
+            if(values != null)
+                for (StateVariable<RemoteService> stateVariable1 : service.getStateVariables()) {
+                    stateVariableValue = values.get(stateVariable1.getName());
+                    if(stateVariableValue != null)
+                        string += "\n       |___"+stateVariable1.getName()+": "+stateVariableValue.getValue();
+                    else
+                        string += "\n       |___"+stateVariable1.getName();
+                }                
+            else
+                for (StateVariable<RemoteService> stateVariable1 : service.getStateVariables()) {
                     string += "\n       |___"+stateVariable1.getName();
-            }
+                }
             return string;
         }
         else return null;
     }
     
-    private String getInfoDevice(RemoteDevice device,String stateVariable,Object value){
-        String string = "";
+    private String getInfoDevice(RemoteDevice device){
+        String string = "";        
         if(device!=null){
+            string += device.getDetails().getFriendlyName();
             for (RemoteService service : device.getServices()) {
                 string += "\n|___"+service.getServiceId().getId();
-                string += getInfoService(service,stateVariable,value);
+                string += getInfoService(service);
             }
             return string;
         }
