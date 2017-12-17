@@ -1,5 +1,9 @@
 package smartHome;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Collection;
+import java.util.Date;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.*;
@@ -14,7 +18,7 @@ import org.fourthline.cling.registry.*;
  * @author Han
  */
 public class ControlPoint extends ControlPointGUI implements Runnable{
-    private final javax.swing.JTextArea cpArea;    
+    private final javax.swing.JTextArea infoArea;    
     private final javax.swing.JComboBox deviceBox;
     private final javax.swing.JComboBox serviceBox;
     private final javax.swing.JComboBox actionBox;
@@ -22,6 +26,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private final javax.swing.JCheckBox valueCheckBox;
     private final javax.swing.JSpinner valueSpinner;
     private final javax.swing.JButton callActionButton;
+    private final javax.swing.JTextArea resultArea;
     private final UpnpService upnpService;
     private RemoteDevice gdevice=null;
     private Service gservice=null;
@@ -30,7 +35,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     
     public ControlPoint(){
         upnpService = new UpnpServiceImpl();
-        cpArea = this.getCPArea();
+        infoArea = this.getInfoArea();
         deviceBox = this.getDeviceBox();
         serviceBox = this.getServiceBox();        
         actionBox = this.getActionBox();
@@ -38,6 +43,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         valueCheckBox = this.getCheckBox();
         valueSpinner = this.getSpinner();
         callActionButton = this.getCallActionButton();
+        resultArea = this.getResultArea();
         deviceBox.setVisible(false);
         serviceBox.setVisible(false);       
         actionBox.setVisible(false);
@@ -109,10 +115,11 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     
     private void DeviceBoxActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-        if(deviceBox.getSelectedItem()!=null){
+        if(deviceBox.getSelectedItem()!=null){            
             deviceBox.setVisible(true);        
             gdevice = upnpService.getRegistry().getRemoteDevice((UDN) deviceBox.getSelectedItem(), rootPaneCheckingEnabled);
     //        System.out.println(remoteDevice);
+            infoArea.setText(gdevice.getDetails().getFriendlyName()+"\n");
             serviceBox.removeAllItems();
             for (RemoteService service1 : gdevice.getServices()) {
     //            System.out.println(service1);
@@ -215,7 +222,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     
     private void DeviceBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                         
         // TODO add your handling code here:
-        serviceBox.setVisible(deviceBox.isVisible());
+        serviceBox.setVisible(deviceBox.isVisible());        
     }                                        
 
     private void ServiceBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                          
@@ -261,8 +268,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             @Override
             public void remoteDeviceAdded(Registry registry, RemoteDevice device) {
 //                Service service;
-                System.out.println("Added : "+ device);
-                cpArea.append(device.getDetails().getFriendlyName()+"\n");
+                System.out.println("Added : "+ device);                
                 deviceBox.addItem(device.getIdentity().getUdn());                
 //                for (Map.Entry<Object, Object> entry : getDevices()) {
 //                    Object key = entry.getKey();
@@ -280,7 +286,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 //                    System.out.println("Service discovered: " + service);
 ////                    executeAction(upnpService, service, "SetVolume", "NewVolumeValue", 33);
 ////                    executeAction(upnpService, service, "SetStatus", "NewStatusValue", true);
-//                    cpArea.append(service.getServiceId().toString()+"\n");
+//                    infoArea.append(service.getServiceId().toString()+"\n");
 //                    SubscriptionCallback callback = new SubscriptionCallback(service, 600) { // Timeout in seconds
 //
 //                        @Override
@@ -334,7 +340,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 //                Service service;
 //                if ((service = device.findService(serviceId)) != null) {                    
 //                    System.out.println("Service disappeared: " + service);                    
-//                    cpArea.setText(cpArea.getText().replace(service.getServiceId().toString()+"\n", ""));
+//                    infoArea.setText(infoArea.getText().replace(service.getServiceId().toString()+"\n", ""));
 //                }
                   System.out.println("Remove : "+ device);
             }
@@ -385,7 +391,11 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     public Collection<RemoteDevice> getDevices(){            
         return upnpService.getRegistry().getRemoteDevices();
     }
-
+    public String currentTime(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date); //2016/11/16 12:08:43
+    }
     private void executeAction(
                     UpnpService upnpService,
                     Service service,
@@ -402,7 +412,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                         ActionArgument argument = action.getInputArgument(agrumentName);
                         if(argument != null){                        
                             if(argument.getDatatype().isHandlingJavaType(value.getClass())){
-                                System.out.println("OK ALL");
+                                System.out.println("Params OK");
                                 paramsOk = true;
                             }
                             else System.out.println("ValueType is invalid.");
@@ -412,7 +422,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                     else{
                         agrumentName = null;
                         value = null;
-                        System.out.println("Not need argument, OK ALL");
+                        System.out.println("Not need argument, Params OK");
                         paramsOk = true;
                     }
                 }
@@ -429,10 +439,11 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                             public void success(ActionInvocation invocation) {                            
                                 System.out.println("Successfully called action!");
                                 
-                                for (ActionArgumentValue actionArgumentValue : invocation.getOutput()) {
-                                    System.out.println("Result:\n   Name: "
-                                            +actionArgumentValue.getArgument().getName()+"\n   Value: "
+                                for (ActionArgumentValue actionArgumentValue : invocation.getOutput()) {                                    
+                                    resultArea.append("\nResult( "+currentTime()+" ):\n   "
+                                            +actionArgumentValue.getArgument().getName()+": "
                                             +actionArgumentValue);
+                                    resultArea.setCaretPosition(resultArea.getText().length());
                                 }
                             }
                             @Override
