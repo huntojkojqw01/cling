@@ -278,7 +278,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             public void remoteDeviceAdded(Registry registry, RemoteDevice device) {
 //                Service service;
                 System.out.println("Added : "+ device);                
-                deviceBox.addItem(device.getIdentity().getUdn());                
+                deviceBox.addItem(device.getIdentity().getUdn());    
+                
                 for (RemoteService service : device.getServices()) {
                     SubscriptionCallback callback = new SubscriptionCallback(service, 600) { // Timeout in seconds
 
@@ -296,7 +297,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 
                         @Override
                         public void ended(GENASubscription sub, CancelReason reason, UpnpResponse response) {
-                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                         }
 
                         @Override
@@ -334,7 +335,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 
                         @Override
                         protected void failed(GENASubscription subscription, UpnpResponse responseStatus, Exception exception, String defaultMsg) {
-                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                         }
                         
                    };
@@ -343,6 +344,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
             @Override
             public void remoteDeviceRemoved(Registry registry, RemoteDevice device) {
+                deviceBox.removeItem(device.getIdentity().getUdn());
                 System.out.println("Remove : "+ device);
             }          
         };
