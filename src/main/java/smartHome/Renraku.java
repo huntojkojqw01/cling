@@ -1,5 +1,6 @@
 package smartHome;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import org.fourthline.cling.binding.annotations.*;
 import java.beans.PropertyChangeSupport;
 /**
@@ -13,20 +14,34 @@ import java.beans.PropertyChangeSupport;
 public class Renraku extends PhoneGUI{
     private final PropertyChangeSupport propertyChangeSupport;
     private final javax.swing.JButton callButton;
+    private final javax.swing.JButton cancelButton;
+    private final javax.swing.JButton btn;
     public Renraku() {
         this.propertyChangeSupport = new PropertyChangeSupport(this);    
         callButton=this.getCallButton();
+        btn=this.getbtn();
+        cancelButton=this.getCancelButton();
         callButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CallButtonActionPerformed(evt);
             }
         });
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelButtonActionPerformed(evt);
+            }
+        });
     }
     private void CallButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:        
-        setStatus(!status);        
-    } 
+        setStatus(true);        
+    }
+    private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        setStatus(false);
+    }     
     public PropertyChangeSupport getPropertyChangeSupport() {
         return propertyChangeSupport;
     }    
@@ -38,8 +53,12 @@ public class Renraku extends PhoneGUI{
         status = newTargetValue;        
         getPropertyChangeSupport().firePropertyChange("Status", null, status);
         
-        //GIAO DIEN THAY DOI O DAY:
-        callButton.setBackground(status==true ? Color.red : Color.green);
+        if(status == true){
+            btn.setText("IS CALLING");
+        }
+        else if(status == false){
+            btn.setText("NOT CALLING");
+        }
     }
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatusValue"))
     public boolean getStatus() {
