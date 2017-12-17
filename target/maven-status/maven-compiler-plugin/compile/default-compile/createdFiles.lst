@@ -69,6 +69,7 @@ org\fourthline\cling\model\DiscoveryOptions.class
 org\fourthline\cling\model\types\csv\CSVCharacter.class
 org\fourthline\cling\protocol\sync\SendingRenewal$3.class
 org\fourthline\cling\binding\annotations\UpnpService.class
+binlight\SpeakerGUI.class
 org\fourthline\cling\protocol\sync\SendingSubscribe.class
 org\fourthline\cling\transport\impl\FixedSunURLStreamHandler.class
 org\fourthline\cling\model\message\header\UDADeviceTypeHeader.class
@@ -77,6 +78,7 @@ org\fourthline\cling\registry\event\Phase.class
 org\fourthline\cling\model\meta\Icon.class
 org\fourthline\cling\protocol\sync\ReceivingSubscribe.class
 org\fourthline\cling\mock\MockUpnpServiceConfiguration$3.class
+binlight\Speaker$3.class
 org\fourthline\cling\model\state\StateVariableValue.class
 org\fourthline\cling\model\types\DeviceType.class
 org\fourthline\cling\transport\RouterException.class
@@ -100,6 +102,7 @@ org\fourthline\cling\protocol\async\SendingNotificationByebye.class
 org\fourthline\cling\model\message\UpnpResponse.class
 org\fourthline\cling\model\message\discovery\OutgoingSearchResponseUDN.class
 org\fourthline\cling\model\message\header\UpnpHeader$Type.class
+binlight\Speaker$1.class
 org\fourthline\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl$ActionHandler.class
 org\fourthline\cling\transport\impl\StreamClientImpl.class
 org\fourthline\cling\binding\xml\UDA10DeviceDescriptorBinderSAXImpl.class
@@ -143,11 +146,14 @@ org\fourthline\cling\registry\RemoteItems.class
 org\fourthline\cling\model\Constants.class
 org\fourthline\cling\model\resource\ServiceEventCallbackResource.class
 org\fourthline\cling\model\types\AbstractDatatype.class
+binlight\ControlPoint$1$1.class
 org\fourthline\cling\binding\annotations\AnnotationStateVariableBinder.class
 org\fourthline\cling\transport\impl\AsyncServletStreamServerImpl$1$2.class
 org\fourthline\cling\controlpoint\ControlPoint.class
 org\fourthline\cling\protocol\sync\SendingRenewal$1.class
 org\fourthline\cling\controlpoint\ControlPointImpl.class
+binlight\Speaker$4.class
+binlight\SetTargetActionInvocation.class
 org\fourthline\cling\model\types\csv\CSVInteger.class
 org\fourthline\cling\model\types\DLNADoc.class
 org\fourthline\cling\model\Validatable.class
@@ -159,6 +165,7 @@ org\fourthline\cling\model\message\header\RootDeviceHeader.class
 org\fourthline\cling\controlpoint\event\ExecuteAction.class
 org\fourthline\cling\model\meta\QueryStateVariableAction.class
 org\fourthline\cling\model\types\URIDatatype.class
+binlight\SetActionInvocation.class
 org\fourthline\cling\protocol\sync\SendingRenewal$2.class
 org\fourthline\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl$1.class
 org\fourthline\cling\registry\LocalItems$1.class
@@ -169,11 +176,13 @@ org\fourthline\cling\binding\staging\MutableStateVariable.class
 org\fourthline\cling\protocol\sync\SendingUnsubscribe$1.class
 org\fourthline\cling\binding\annotations\UpnpStateVariable.class
 org\fourthline\cling\mock\MockProtocolFactory.class
+binlight\Renraku.class
 org\fourthline\cling\model\resource\IconResource.class
 org\fourthline\cling\model\types\UDADeviceType.class
 org\fourthline\cling\ManagedUpnpServiceConfiguration.class
 org\fourthline\cling\model\message\UpnpMessage.class
 org\fourthline\cling\transport\spi\InitializationException.class
+binlight\Speaker$5.class
 org\fourthline\cling\model\message\header\MANHeader.class
 org\fourthline\cling\registry\RemoteItems$2.class
 org\fourthline\cling\registry\event\Phase$Alive.class
@@ -202,6 +211,7 @@ org\fourthline\cling\model\message\control\ActionMessage.class
 org\fourthline\cling\model\message\header\AVClientInfoHeader.class
 org\fourthline\cling\model\gena\LocalGENASubscription.class
 org\fourthline\cling\transport\impl\AsyncServletStreamServerImpl$AsyncServletConnection.class
+binlight\ControlPoint$1.class
 org\fourthline\cling\android\AndroidUpnpServiceImpl$Binder.class
 org\fourthline\cling\model\action\ActionExecutor.class
 org\fourthline\cling\protocol\sync\ReceivingUnsubscribe.class
@@ -217,6 +227,8 @@ org\fourthline\cling\model\message\header\NTEventHeader.class
 org\fourthline\cling\model\message\header\CallbackHeader.class
 org\fourthline\cling\model\message\header\UserAgentHeader.class
 org\fourthline\cling\transport\spi\MulticastReceiver.class
+binlight\Phone$1.class
+binlight\Chousei.class
 org\fourthline\cling\model\types\SoapActionType.class
 org\fourthline\cling\registry\LocalItems$4.class
 org\fourthline\cling\model\types\UnsignedVariableInteger.class
@@ -233,6 +245,7 @@ org\fourthline\cling\mock\MockRouter.class
 org\fourthline\cling\model\message\UpnpRequest$Method.class
 org\fourthline\cling\transport\impl\StreamServerImpl$RequestHttpHandler.class
 org\fourthline\cling\registry\Registry.class
+binlight\Speaker$2.class
 org\fourthline\cling\DefaultUpnpServiceConfiguration$ClingExecutor.class
 org\fourthline\cling\transport\impl\FixedSunURLStreamHandler$UpnpURLConnection.class
 org\fourthline\cling\model\message\header\EXTHeader.class
@@ -291,6 +304,7 @@ org\fourthline\cling\transport\impl\PullGENAEventProcessorImpl.class
 org\fourthline\cling\model\types\UnsignedIntegerTwoBytes.class
 org\fourthline\cling\model\types\Datatype$Default.class
 org\fourthline\cling\registry\RemoteItems$4.class
+binlight\Speaker.class
 org\fourthline\cling\model\message\StreamRequestMessage.class
 org\fourthline\cling\transport\impl\AsyncServletUpnpStream.class
 org\fourthline\cling\binding\staging\MutableIcon.class
@@ -308,6 +322,7 @@ org\fourthline\cling\transport\impl\MulticastReceiverImpl.class
 org\fourthline\cling\model\ValidationError.class
 org\fourthline\cling\model\profile\RemoteClientInfo.class
 org\fourthline\cling\binding\annotations\UpnpStateVariables.class
+binlight\ControlPoint.class
 org\fourthline\cling\model\gena\RemoteGENASubscription.class
 org\fourthline\cling\model\types\csv\CSV.class
 org\fourthline\cling\registry\LocalItems.class
@@ -350,9 +365,11 @@ org\fourthline\cling\transport\spi\StreamServer.class
 org\fourthline\cling\registry\event\RegistryShutdown.class
 org\fourthline\cling\binding\xml\Descriptor.class
 org\fourthline\cling\binding\xml\ServiceDescriptorBinder.class
+binlight\SpeakerGUI$1.class
 org\fourthline\cling\ManagedUpnpService$RegistryListenerAdapter$1.class
 org\fourthline\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl$AllowedValueListHandler.class
 org\fourthline\cling\model\types\NamedServiceType.class
+binlight\GetActionInvocation.class
 org\fourthline\cling\transport\impl\HttpExchangeUpnpStream.class
 org\fourthline\cling\model\message\discovery\IncomingNotificationRequest.class
 org\fourthline\cling\model\state\FieldStateVariableAccessor.class
@@ -422,6 +439,7 @@ org\fourthline\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl$ActionListH
 org\fourthline\cling\model\message\header\USNRootDeviceHeader.class
 org\fourthline\cling\protocol\sync\SendingSubscribe$1.class
 org\fourthline\cling\binding\annotations\AnnotationActionBinder.class
+binlight\Phone.class
 org\fourthline\cling\model\meta\Action.class
 org\fourthline\cling\model\types\InvalidValueException.class
 org\fourthline\cling\binding\xml\DescriptorBindingException.class
@@ -436,6 +454,7 @@ org\fourthline\cling\model\UserConstants.class
 org\fourthline\cling\ManagedUpnpService.class
 org\fourthline\cling\model\message\discovery\OutgoingNotificationRequestServiceType.class
 org\fourthline\cling\model\action\ActionArgumentValue.class
+binlight\SpeakerGUI$2.class
 org\fourthline\cling\model\meta\StateVariableTypeDetails.class
 org\fourthline\cling\model\types\CharacterDatatype.class
 org\fourthline\cling\model\types\csv\CSVBytes.class
