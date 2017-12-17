@@ -119,7 +119,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             deviceBox.setVisible(true);        
             gdevice = upnpService.getRegistry().getRemoteDevice((UDN) deviceBox.getSelectedItem(), rootPaneCheckingEnabled);
     //        System.out.println(remoteDevice);
-            infoArea.setText(gdevice.getDetails().getFriendlyName()+"\n");
+            infoArea.setText(gdevice.getDetails().getFriendlyName());
+            infoArea.append(getInfoDevice(gdevice,null,null));
             serviceBox.removeAllItems();
             for (RemoteService service1 : gdevice.getServices()) {
     //            System.out.println(service1);
@@ -270,17 +271,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 //                Service service;
                 System.out.println("Added : "+ device);                
                 deviceBox.addItem(device.getIdentity().getUdn());                
-//                for (Map.Entry<Object, Object> entry : getDevices()) {
-//                    Object key = entry.getKey();
-//                    Object value = entry.getValue();
-//                    
-//                }
-//                deviceBox.setModel(new DefaultComboBoxModel(getDevices()));
-//                   for (Object device1 : getDevices()) {
-//                       System.out.println((RemoteDevice)device1.ge); 
-//                    }
-                 
-//                registry.addDevice(device);
+
 //                System.out.println("resgis co: "+registry.getRemoteDevices().size());
 //                if ((service = device.findService(serviceId)) != null) {                    
 //                    System.out.println("Service discovered: " + service);
@@ -337,71 +328,50 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
             @Override
             public void remoteDeviceRemoved(Registry registry, RemoteDevice device) {
-//                Service service;
-//                if ((service = device.findService(serviceId)) != null) {                    
-//                    System.out.println("Service disappeared: " + service);                    
-//                    infoArea.setText(infoArea.getText().replace(service.getServiceId().toString()+"\n", ""));
-//                }
-                  System.out.println("Remove : "+ device);
-            }
-//            private void executeAction(
-//                    UpnpService upnpService,
-//                    Service service,
-//                    String actionName,
-//                    String agrumentName,
-//                    Object value
-//            ) {
-//                // Begin check params xem co hop le hay khong, hop le thi moi execute action:
-//                Action action = service.getAction(actionName);
-//                boolean paramsOk = false;
-//                if(action != null){
-//                    ActionArgument argument = action.getInputArgument(agrumentName);
-//                    if(argument != null){                        
-//                        if(argument.getDatatype().isHandlingJavaType(value.getClass())){
-//                            System.out.println("OK ALL");
-//                            paramsOk = true;
-//                        }
-//                        else System.out.println("ValueType is invalid.");
-//                    }
-//                    else System.out.println("ArgumentName is invalid.");                    
-//                }
-//                else System.out.println("ActionName is invalid.");
-//                // end Check params.
-//                
-//                if(paramsOk){
-//                    ActionInvocation invocation =
-//                    new CallAction(service,actionName,agrumentName,value);
-//                    // Executes asynchronous in the background
-//                    upnpService.getControlPoint().execute(
-//                        new ActionCallback(invocation) {
-//                            @Override
-//                            public void success(ActionInvocation invocation) {                            
-//                                System.out.println("Successfully called action!");
-//                            }
-//                            @Override
-//                            public void failure(ActionInvocation invocation,UpnpResponse operation,String defaultMsg) {
-//                                System.err.println(defaultMsg);
-//                            }
-//                        }
-//                    );
-//                }else System.out.println("=>Params is invalid");
-//            }           
+                System.out.println("Remove : "+ device);
+            }          
         };
     }
+    
     public Collection<RemoteDevice> getDevices(){            
         return upnpService.getRegistry().getRemoteDevices();
     }
+    
     public String currentTime(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         return dateFormat.format(date); //2016/11/16 12:08:43
     }
+
+    private String getInfoService(RemoteService service,String stateVariable,Object value){
+        String string = "";
+        if(service!=null){
+            for (StateVariable<RemoteService> stateVariable1 : service.getStateVariables()) {
+                if(stateVariable!=null &&  stateVariable.equals(stateVariable1.getName()))
+                    string += "\n       |___"+stateVariable1.getName()+": "+value;
+                else
+                    string += "\n       |___"+stateVariable1.getName();
+            }
+            return string;
+        }
+        else return null;
+    }
+    
+    private String getInfoDevice(RemoteDevice device,String stateVariable,Object value){
+        String string = "";
+        if(device!=null){
+            for (RemoteService service : device.getServices()) {
+                string += "\n|___"+service.getServiceId().getId();
+                string += getInfoService(service,stateVariable,value);
+            }
+            return string;
+        }
+        else return null;
+    }
+    
     private void executeAction(
-                    UpnpService upnpService,
-                    Service service,
-                    String actionName,
-                    String agrumentName,
-                    Object value
+                    UpnpService upnpService, Service service,
+                    String actionName, String agrumentName, Object value
             ) {
                 // Begin check params xem co hop le hay khong, hop le thi moi execute action:
                 Action action = service.getAction(actionName);
@@ -412,7 +382,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                         ActionArgument argument = action.getInputArgument(agrumentName);
                         if(argument != null){                        
                             if(argument.getDatatype().isHandlingJavaType(value.getClass())){
-                                System.out.println("Params OK");
+//                                System.out.println("Params OK");
                                 paramsOk = true;
                             }
                             else System.out.println("ValueType is invalid.");
@@ -422,7 +392,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                     else{
                         agrumentName = null;
                         value = null;
-                        System.out.println("Not need argument, Params OK");
+//                        System.out.println("Not need argument, Params OK");
                         paramsOk = true;
                     }
                 }
@@ -437,7 +407,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                         new ActionCallback(invocation) {
                             @Override
                             public void success(ActionInvocation invocation) {                            
-                                System.out.println("Successfully called action!");
+//                                System.out.println("Successfully called action!");
                                 
                                 for (ActionArgumentValue actionArgumentValue : invocation.getOutput()) {                                    
                                     resultArea.append("\nResult( "+currentTime()+" ):\n   "
