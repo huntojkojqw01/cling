@@ -1,16 +1,24 @@
 package smartHome;
+import static java.awt.Frame.SE_RESIZE_CURSOR;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Map;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.*;
+import org.fourthline.cling.model.ServiceReference;
+import org.fourthline.cling.model.UnsupportedDataException;
 import org.fourthline.cling.model.action.*;
+import org.fourthline.cling.model.gena.CancelReason;
+import org.fourthline.cling.model.gena.GENASubscription;
+import org.fourthline.cling.model.gena.RemoteGENASubscription;
 import org.fourthline.cling.model.message.*;
 import org.fourthline.cling.model.message.header.*;
 import org.fourthline.cling.model.meta.*;
+import org.fourthline.cling.model.state.StateVariableValue;
 import org.fourthline.cling.model.types.*;
 import org.fourthline.cling.registry.*;
 /**
@@ -252,7 +260,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             // Add a listener for device registration events
             upnpService.getRegistry().addListener(
                     createRegistryListener(upnpService)
-            );
+            );            
             // Broadcast a search message for all devices
             upnpService.getControlPoint().search(
                     new STAllHeader()
@@ -271,60 +279,67 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
 //                Service service;
                 System.out.println("Added : "+ device);                
                 deviceBox.addItem(device.getIdentity().getUdn());                
+                for (RemoteService service : device.getServices()) {
+                    SubscriptionCallback callback = new SubscriptionCallback(service, 600) { // Timeout in seconds
 
-//                System.out.println("resgis co: "+registry.getRemoteDevices().size());
-//                if ((service = device.findService(serviceId)) != null) {                    
-//                    System.out.println("Service discovered: " + service);
-////                    executeAction(upnpService, service, "SetVolume", "NewVolumeValue", 33);
-////                    executeAction(upnpService, service, "SetStatus", "NewStatusValue", true);
-//                    infoArea.append(service.getServiceId().toString()+"\n");
-//                    SubscriptionCallback callback = new SubscriptionCallback(service, 600) { // Timeout in seconds
-//
-//                        @Override
-//                        public void established(GENASubscription sub) {
-//                            System.out.println("Established: " + sub.getSubscriptionId());
-//                        }
-//
-//                        @Override
-//                        public void failed(GENASubscription sub, UpnpResponse response, Exception ex) {
-//                            System.err.println(
-//                                createDefaultFailureMessage(response, ex)
-//                            );
-//                        }
-//
-//                        @Override
-//                        public void ended(GENASubscription sub, CancelReason reason, UpnpResponse response) {
-//                            // Reason should be null, or it didn't end regularly
-//                        }
-//
-//                        @Override
-//                        public void eventReceived(GENASubscription sub) {
-////                            
-////                            System.out.println("Event: " + sub.getCurrentSequence().getValue());
-//                            Map<String, StateVariableValue> values = sub.getCurrentValues();
-////                            System.out.println(sub);
-//                            StateVariableValue status = values.get("Status");
-//                            
-//                            
-//                            if(status!=null) System.out.println("Status is: " + status.toString());
-//                            else{
-//                                System.out.println("Ko co status.");
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void eventsMissed(GENASubscription sub, int numberOfMissedEvents) {
-//                            System.out.println("Missed events: " + numberOfMissedEvents);
-//                        }
-//
-//                        @Override
-//                        protected void failed(GENASubscription subscription, UpnpResponse responseStatus, Exception exception, String defaultMsg) {
-//                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//                        }
-//                   };
-//                   upnpService.getControlPoint().execute(callback);
-//                }
-//                else System.out.println("Khong tim thay service "+ serviceId);
+                        @Override
+                        public void established(GENASubscription sub) {
+                            System.out.println("Established: " + sub.getSubscriptionId());
+                        }
+
+                        @Override
+                        public void failed(GENASubscription sub, UpnpResponse response, Exception ex) {
+                            System.err.println(
+                                createDefaultFailureMessage(response, ex)
+                            );
+                        }
+
+                        @Override
+                        public void ended(GENASubscription sub, CancelReason reason, UpnpResponse response) {
+                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+
+                        @Override
+                        public void eventReceived(GENASubscription sub) {//
+
+                            System.out.println("Event number "+sub.getCurrentSequence().getValue()+" from "+sub.getSubscriptionId());
+                            Map<String, StateVariableValue> values = sub.getCurrentValues();
+                            
+                            for (Map.Entry<String, StateVariableValue> entry : values.entrySet()) {
+                                String key = entry.getKey();
+                                StateVariableValue value = entry.getValue();
+                                System.out.println("   "+key+" is "+value);
+                                
+                            }
+                            StateVariableValue status = values.get("Status");                            
+                            
+                            if(status != null){
+                                RemoteDevice tmpDevice = null;
+                                Service tmpService = null;
+                                for (RemoteDevice remoteDevice : upnpService.getRegistry().getRemoteDevices()) {
+                                    tmpService = remoteDevice.findService(new UDAServiceType("Chousei"));
+                                    if(tmpService != null){
+//                                        System.out.println("tim thay "+tmpService);
+                                            System.out.println(status.getValue());
+                                        executeAction(upnpService, tmpService, "SetPower", "NewPowerValue", status.getValue());
+                                    }        
+                                }
+                            }         
+                        }
+
+                        @Override
+                        public void eventsMissed(GENASubscription sub, int numberOfMissedEvents) {
+                            System.out.println("Missed events: " + numberOfMissedEvents);
+                        }                                         
+
+                        @Override
+                        protected void failed(GENASubscription subscription, UpnpResponse responseStatus, Exception exception, String defaultMsg) {
+                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+                        
+                   };
+                   upnpService.getControlPoint().execute(callback);
+                }
             }
             @Override
             public void remoteDeviceRemoved(Registry registry, RemoteDevice device) {
