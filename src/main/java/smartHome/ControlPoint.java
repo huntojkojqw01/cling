@@ -1,8 +1,6 @@
 package smartHome;
-import static java.awt.Frame.SE_RESIZE_CURSOR;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -10,21 +8,19 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import javax.swing.DefaultComboBoxModel;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.*;
-import org.fourthline.cling.model.ServiceReference;
-import org.fourthline.cling.model.UnsupportedDataException;
 import org.fourthline.cling.model.action.*;
 import org.fourthline.cling.model.gena.CancelReason;
 import org.fourthline.cling.model.gena.GENASubscription;
-import org.fourthline.cling.model.gena.RemoteGENASubscription;
 import org.fourthline.cling.model.message.*;
 import org.fourthline.cling.model.message.header.*;
 import org.fourthline.cling.model.meta.*;
 import org.fourthline.cling.model.state.StateVariableValue;
 import org.fourthline.cling.model.types.*;
+import org.fourthline.cling.model.types.BooleanDatatype;
 import org.fourthline.cling.registry.*;
 /**
  *
@@ -38,6 +34,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private final javax.swing.JComboBox argumentBox;    
     private final javax.swing.JCheckBox valueCheckBox;
     private final javax.swing.JSpinner valueSpinner;
+    private final javax.swing.JTextField valueTextField;
     private final javax.swing.JButton callActionButton;
     private final javax.swing.JTextArea resultArea;
     //==============================================
@@ -46,12 +43,15 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private javax.swing.JComboBox<String> dServiceBox;
     private javax.swing.JSpinner dSpinner;
     private javax.swing.JComboBox<String> dVariableBox;
+    private javax.swing.JTextField dTextField;
        
     private javax.swing.JCheckBox sCheckBox;
     private javax.swing.JComboBox<String> sDeviceBox;
     private javax.swing.JComboBox<String> sServiceBox;
     private javax.swing.JSpinner sSpinner;
     private javax.swing.JComboBox<String> sVariableBox;
+    private javax.swing.JTextField sTextField;
+    
     private javax.swing.JButton setButton;
     private javax.swing.JButton unSetButton;
     private javax.swing.JTextArea listArea;
@@ -79,6 +79,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         argumentBox = this.getArgumentBox();
         valueCheckBox = this.getCheckBox();
         valueSpinner = this.getSpinner();
+        valueTextField = this.getTextField();
         callActionButton = this.getCallActionButton();
         resultArea = this.getResultArea();
         deviceBox.setVisible(false);
@@ -87,17 +88,21 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         argumentBox.setVisible(false);
         valueCheckBox.setVisible(false);
         valueSpinner.setVisible(false);
+        valueTextField.setVisible(false);
         //=============================
         dDeviceBox=this.getDDeviceBox();
         dServiceBox=this.getDServiceBox();
         dVariableBox=this.getDVariableBox();
         dCheckBox=this.getDCheckBox();
         dSpinner=this.getDSpinner();
+        dTextField=this.getDTextField();
         sDeviceBox=this.getSDeviceBox();
         sServiceBox=this.getSServiceBox();
         sVariableBox=this.getSVariableBox();
         sCheckBox=this.getSCheckBox();
         sSpinner=this.getSSpinner();
+        sTextField=this.getSTextField();
+        
         setButton=this.getSetButton();
         unSetButton=this.getUnSetButton();
         listArea=this.getListArea();
@@ -317,17 +322,27 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         if(argumentBox.getSelectedItem()!=null){
             argumentBox.setVisible(true);            
             gargument = gaction.getInputArgument(argumentBox.getSelectedItem().toString());            
-            if(gargument!=null){                
-                if(gargument.getDatatype().isHandlingJavaType(Integer.class)){
+            if(gargument!=null){
+                Class argumentClass = gargument.getDatatype().getClass();
+                if(argumentClass.equals(BooleanDatatype.class)){
                                    
-                    valueSpinner.setVisible(true);
-                    valueCheckBox.setVisible(false);
-                }
-                else{
-                    
                     valueSpinner.setVisible(false);
-                    valueCheckBox.setVisible(true);                  
-                    
+                    valueCheckBox.setVisible(true);
+                    valueTextField.setVisible(false);
+                }
+                else{                    
+                    if(argumentClass.equals(DateTimeDatatype.class)||
+                       argumentClass.equals(StringDatatype.class)||
+                       argumentClass.equals(CharacterDatatype.class)){
+                        valueSpinner.setVisible(false);
+                        valueCheckBox.setVisible(false);
+                        valueTextField.setVisible(true);
+                    }
+                    else{
+                        valueSpinner.setVisible(true);
+                        valueCheckBox.setVisible(false);
+                        valueTextField.setVisible(false);
+                    }
                 }
             }
         }
@@ -335,6 +350,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             argumentBox.setVisible(false);
             valueSpinner.setVisible(false);
             valueCheckBox.setVisible(false);
+            valueTextField.setVisible(false);
         }
     }
         
@@ -348,8 +364,16 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         
         if(gargument!=null){
             argumentName = gargument.getName();
-            if(gargument.getDatatype().isHandlingJavaType(Boolean.class)) value = valueCheckBox.isSelected();
-            else value = valueSpinner.getValue();
+            Class argumentClass = gargument.getDatatype().getClass();
+            if(argumentClass.equals(BooleanDatatype.class))
+                value = valueCheckBox.isSelected();
+            else
+                if(argumentClass.equals(DateTimeDatatype.class)||
+                   argumentClass.equals(StringDatatype.class)||
+                   argumentClass.equals(CharacterDatatype.class))
+                    value = valueTextField.getText();
+                else
+                    value = valueSpinner.getValue();
         }
         
         System.out.println("Params:\n    "+upnpService+"\n    "+gservice+"\n    "+actionName+"\n    "+argumentName+"\n    "+value);
@@ -392,18 +416,24 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                             if(service.getServiceType().getType().equals(sServiceBox.getSelectedItem())){
                                 for (StateVariable<RemoteService> stateVariable : service.getStateVariables()) {                                    
                                     if(stateVariable.getName().equals(sVariableBox.getSelectedItem())){
-                                        if(stateVariable.getTypeDetails().getDatatype().isHandlingJavaType(Integer.class)){                                   
-                                            sSpinner.setVisible(true);
-                                            sCheckBox.setVisible(false);
+                                        Class variableClass = stateVariable.getTypeDetails().getDatatype().getClass();
+                                        if(variableClass.equals(BooleanDatatype.class)){                                   
+                                            sSpinner.setVisible(false);
+                                            sCheckBox.setVisible(true);
+                                            sTextField.setVisible(false);
                                         }
                                         else{
-                                            if(stateVariable.getTypeDetails().getDatatype().isHandlingJavaType(Boolean.class)){
-                                                sSpinner.setVisible(false);
-                                                sCheckBox.setVisible(true);
-                                            }
-                                            else{
+                                            if(variableClass.equals(DateTimeDatatype.class)||
+                                               variableClass.equals(StringDatatype.class)||
+                                               variableClass.equals(CharacterDatatype.class)){
                                                 sSpinner.setVisible(false);
                                                 sCheckBox.setVisible(false);
+                                                sTextField.setVisible(true);
+                                            }
+                                            else{
+                                                sSpinner.setVisible(true);
+                                                sCheckBox.setVisible(false);
+                                                sTextField.setVisible(false);
                                             }
                                         }
                                         break;
@@ -418,6 +448,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             sVariableBox.setVisible(false);
             sSpinner.setVisible(false);
             sCheckBox.setVisible(false);
+            sTextField.setVisible(false);
         }
     }                                            
 
@@ -432,18 +463,24 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                             if(service.getServiceType().getType().equals(dServiceBox.getSelectedItem())){
                                 for (StateVariable<RemoteService> stateVariable : service.getStateVariables()) {                                    
                                     if(stateVariable.getName().equals(dVariableBox.getSelectedItem())){
-                                        if(stateVariable.getTypeDetails().getDatatype().isHandlingJavaType(Integer.class)){                                   
-                                            dSpinner.setVisible(true);
-                                            dCheckBox.setVisible(false);
+                                        Class variableClass = stateVariable.getTypeDetails().getDatatype().getClass();
+                                        if(variableClass.equals(BooleanDatatype.class)){                                   
+                                            dSpinner.setVisible(false);
+                                            dCheckBox.setVisible(true);
+                                            dTextField.setVisible(false);
                                         }
                                         else{
-                                            if(stateVariable.getTypeDetails().getDatatype().isHandlingJavaType(Boolean.class)){
-                                                dSpinner.setVisible(false);
-                                                dCheckBox.setVisible(true);
-                                            }
-                                            else{
+                                            if(variableClass.equals(DateTimeDatatype.class)||
+                                               variableClass.equals(StringDatatype.class)||
+                                               variableClass.equals(CharacterDatatype.class)){
                                                 dSpinner.setVisible(false);
                                                 dCheckBox.setVisible(false);
+                                                dTextField.setVisible(true);
+                                            }
+                                            else{
+                                                dSpinner.setVisible(true);
+                                                dCheckBox.setVisible(false);
+                                                dTextField.setVisible(false);
                                             }
                                         }
                                         break;
@@ -458,6 +495,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             dVariableBox.setVisible(false);
             dSpinner.setVisible(false);
             dCheckBox.setVisible(false);
+            dTextField.setVisible(false);
         }
     }                                            
 
@@ -487,20 +525,26 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private void DServiceBoxActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         dVariableBox.removeAllItems();
+        DefaultComboBoxModel model = new DefaultComboBoxModel(new String[] {});
         if(dServiceBox.getSelectedItem()!=null){
             dServiceBox.setVisible(true);      
-            if(gdevices!=null)
+            if(gdevices!=null){
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(dDeviceBox.getSelectedItem())){                        
                         for (RemoteService service : remoteDevice.getServices()) {
                             if(service.getServiceType().getType().equals(dServiceBox.getSelectedItem())){
-                                for (StateVariable<RemoteService> stateVariable : service.getStateVariables()) {
-                                    dVariableBox.addItem(stateVariable.getName());
-                                }
+                                for (Action action : service.getActions()) {                                    
+                                    for (ActionArgument argument : action.getInputArguments()) {
+                                        if(((DefaultComboBoxModel)dVariableBox.getModel()).getIndexOf(argument.getRelatedStateVariableName()) == -1) {
+                                            dVariableBox.addItem(argument.getRelatedStateVariableName());
+                                        }                                                          
+                                    }
+                                }                                
                             }
                         }                   
                     }                
                 }
+            }
         }
         else{
             dServiceBox.setVisible(false);
@@ -589,14 +633,20 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             if(sSpinner.isVisible())
                 map.put("sValue",sSpinner.getValue());
             else
-                map.put("sValue",sCheckBox.isSelected());
+                if(sCheckBox.isVisible())
+                    map.put("sValue",sCheckBox.isSelected());
+                else
+                    map.put("sValue",sTextField.getText());
             map.put("dDeviceType", dDeviceBox.getSelectedItem());
             map.put("dServiceType", dServiceBox.getSelectedItem());
             map.put("dStateVariable", dVariableBox.getSelectedItem());
             if(dSpinner.isVisible())
                 map.put("dValue",dSpinner.getValue());
             else
-                map.put("dValue",dCheckBox.isSelected());
+                if(dCheckBox.isVisible())
+                    map.put("dValue",dCheckBox.isSelected());
+                else
+                    map.put("dValue",dTextField.getText());
             
             String string = "";
             if(listMap.indexOf(map)<0){
@@ -630,14 +680,20 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             if(sSpinner.isVisible())
                 map.put("sValue",sSpinner.getValue());
             else
-                map.put("sValue",sCheckBox.isSelected());
+                if(sCheckBox.isVisible())
+                    map.put("sValue",sCheckBox.isSelected());
+                else
+                    map.put("sValue",sTextField.getText());
             map.put("dDeviceType", dDeviceBox.getSelectedItem());
             map.put("dServiceType", dServiceBox.getSelectedItem());
             map.put("dStateVariable", dVariableBox.getSelectedItem());
             if(dSpinner.isVisible())
                 map.put("dValue",dSpinner.getValue());
             else
-                map.put("dValue",dCheckBox.isSelected());
+                if(dCheckBox.isVisible())
+                    map.put("dValue",dCheckBox.isSelected());
+                else
+                    map.put("dValue",dTextField.getText());
             
             String string = "";
             if(listMap.indexOf(map)>=0){
@@ -691,7 +747,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 System.out.println("Added : "+ device);
                 Map<String, StateVariableValue> map = new HashMap<String, StateVariableValue>();
                 
-                deviceBox.addItem(device.getIdentity().getUdn());               
+                deviceBox.addItem(device.getIdentity().getUdn());                
                 deviceMap.put(device, (HashMap) map);
                 dDeviceBox.addItem(device.getType().getType());
                 sDeviceBox.addItem(device.getType().getType());                
@@ -742,8 +798,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                                             next.get("sValue").equals(value)){//                                      
                                         
                                         for (RemoteDevice remoteDevice : upnpService.getRegistry().getRemoteDevices()) {
-                                            if(remoteDevice.getType().getType().equals(next.get("dDeviceType"))){                                  
-//                                                
+                                            if(remoteDevice.getType().getType().equals(next.get("dDeviceType"))){ 
                                                 Service tmpService = remoteDevice.findService(new UDAServiceType(next.get("dServiceType").toString()));
                                                 if(tmpService != null){//                                                    
                                                     for (Action action : tmpService.getActions()) {
@@ -751,7 +806,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                                                             if(argument.getRelatedStateVariableName().equals(next.get("dStateVariable").toString())){//                                                                
                                                                 executeAction(upnpService, tmpService, action.getName(), argument.getName(), next.get("dValue"));
                                                             }
-                                                                                                                        
+                                                            else System.out.println("Khong the thuc thi!!!");                                                            
                                                         }
                                                     }                                                
                                                 }                                                
