@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import org.fourthline.cling.binding.annotations.*;
 import java.beans.PropertyChangeSupport;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 /**
  *
  * @author Han
@@ -15,12 +17,12 @@ public class Renraku extends PhoneGUI{
     private final PropertyChangeSupport propertyChangeSupport;
     private final javax.swing.JButton callButton;
     private final javax.swing.JButton cancelButton;
-    private final javax.swing.JButton btn;
+    private final javax.swing.JLabel labelCall;
     public Renraku() {
         this.propertyChangeSupport = new PropertyChangeSupport(this);    
         callButton=this.getCallButton();
-        btn=this.getbtn();
         cancelButton=this.getCancelButton();
+        labelCall=this.getLabelCall();
         callButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,10 +56,14 @@ public class Renraku extends PhoneGUI{
         getPropertyChangeSupport().firePropertyChange("Status", null, status);
         
         if(status == true){
-            btn.setText("IS CALLING");
+            labelCall.setText("IS CALLING");
+            labelCall.setHorizontalAlignment(JLabel.CENTER);
+            labelCall.setVerticalAlignment(JLabel.CENTER);
         }
         else if(status == false){
-            btn.setText("NOT CALLING");
+            labelCall.setText("NOT CALLING");
+            labelCall.setHorizontalAlignment(JLabel.CENTER);
+            labelCall.setVerticalAlignment(JLabel.CENTER);            
         }
     }
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatusValue"))
