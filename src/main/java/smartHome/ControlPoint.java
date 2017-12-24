@@ -433,7 +433,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private void SVariableBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
         if(sVariableBox.getSelectedItem()!=null){
-            sVariableBox.setVisible(true);
+//            sVariableBox.setVisible(true);
             if(gdevices!=null)
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(sDeviceBox.getSelectedItem())){                        
@@ -470,7 +470,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 }
         }
         else{
-            sVariableBox.setVisible(false);
+//            sVariableBox.setVisible(false);
             sSpinner.setVisible(false);
             sCheckBox.setVisible(false);
             sTextField.setVisible(false);
@@ -480,7 +480,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private void DVariableBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
         if(dVariableBox.getSelectedItem()!=null){
-            dVariableBox.setVisible(true);
+//            dVariableBox.setVisible(true);
             if(gdevices!=null)
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(dDeviceBox.getSelectedItem())){                        
@@ -517,7 +517,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 }
         }
         else{
-            dVariableBox.setVisible(false);
+//            dVariableBox.setVisible(false);
             dSpinner.setVisible(false);
             dCheckBox.setVisible(false);
             dTextField.setVisible(false);
@@ -528,7 +528,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         // TODO add your handling code here:
         sVariableBox.removeAllItems();
         if(sServiceBox.getSelectedItem()!=null){
-            sServiceBox.setVisible(true);            
+//            sServiceBox.setVisible(true);            
             if(gdevices!=null)
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(sDeviceBox.getSelectedItem())){                        
@@ -543,7 +543,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 }
         }
         else{
-            sServiceBox.setVisible(false);
+//            sServiceBox.setVisible(false);
         }
     }                                           
 
@@ -552,13 +552,14 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         dVariableBox.removeAllItems();
         DefaultComboBoxModel model = new DefaultComboBoxModel(new String[] {});
         if(dServiceBox.getSelectedItem()!=null){
-            dServiceBox.setVisible(true);      
+//            dServiceBox.setVisible(true);      
             if(gdevices!=null){
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(dDeviceBox.getSelectedItem())){                        
                         for (RemoteService service : remoteDevice.getServices()) {
                             if(service.getServiceType().getType().equals(dServiceBox.getSelectedItem())){
-                                for (Action action : service.getActions()) {                                    
+                                for (Action action : service.getActions()) {
+//                                    System.out.println("co action "+action.toString());                                    
                                     for (ActionArgument argument : action.getInputArguments()) {
                                         if(((DefaultComboBoxModel)dVariableBox.getModel()).getIndexOf(argument.getRelatedStateVariableName()) == -1) {
                                             dVariableBox.addItem(argument.getRelatedStateVariableName());
@@ -572,14 +573,14 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
         }
         else{
-            dServiceBox.setVisible(false);
+//            dServiceBox.setVisible(false);
         }
     }
     
     private void SDeviceBoxActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         if(sDeviceBox.getSelectedItem()!=null){            
-            sDeviceBox.setVisible(true);        
+//            sDeviceBox.setVisible(true);        
             gdevices = upnpService.getRegistry().getRemoteDevices();                    
             sServiceBox.removeAllItems();
             if(gdevices!=null)
@@ -594,27 +595,28 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 }                   
         }
         else{
-            dDeviceBox.setVisible(false);
+//            dDeviceBox.setVisible(false);
         }        
     }                                          
 
     private void DDeviceBoxActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         if(dDeviceBox.getSelectedItem()!=null){            
-            dDeviceBox.setVisible(true);        
+//            dDeviceBox.setVisible(true);        
             gdevices = upnpService.getRegistry().getRemoteDevices();                    
             dServiceBox.removeAllItems();
             if(gdevices!=null)
                 for (RemoteDevice remoteDevice : gdevices) {                
                     if(remoteDevice.getType().getType().equals(dDeviceBox.getSelectedItem())){    
                         for (RemoteService service : remoteDevice.getServices()) {
+//                            System.out.println("vua them service "+service.getServiceType().getType());
                             dServiceBox.addItem(service.getServiceType().getType());
                         }                   
                     }
                 }                   
         }
         else{
-            dDeviceBox.setVisible(false);
+//            dDeviceBox.setVisible(false);
         }
     }                                          
 
@@ -650,8 +652,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private void SetButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         Map<String, Object> map = new HashMap<String, Object>();
-        if((sSpinner.isVisible()||sCheckBox.isVisible())&&
-            (dSpinner.isVisible()||dCheckBox.isVisible())){            
+        if((sSpinner.isVisible()||sCheckBox.isVisible()||sTextField.isVisible())&&
+            (dSpinner.isVisible()||dCheckBox.isVisible()||dTextField.isVisible())){            
             map.put("sDeviceType", sDeviceBox.getSelectedItem());
             map.put("sServiceType", sServiceBox.getSelectedItem());
             map.put("sStateVariable", sVariableBox.getSelectedItem());
@@ -696,8 +698,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private void UnSetButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         Map<String, Object> map = new HashMap<String, Object>();
-        if((sSpinner.isVisible()||sCheckBox.isVisible())&&
-            (dSpinner.isVisible()||dCheckBox.isVisible())){
+        if((sSpinner.isVisible()||sCheckBox.isVisible()||sTextField.isVisible())&&
+            (dSpinner.isVisible()||dCheckBox.isVisible()||sTextField.isVisible())){
               
             map.put("sDeviceType", sDeviceBox.getSelectedItem());
             map.put("sServiceType", sServiceBox.getSelectedItem());
@@ -821,21 +823,32 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                                             next.get("sServiceType").equals(serviceType)&&
                                             next.get("sStateVariable").equals(stateVariable)&&
                                             next.get("sValue").equals(value)){//                                      
-                                        
+//                                        System.out.println("Tim thay");
                                         for (RemoteDevice remoteDevice : upnpService.getRegistry().getRemoteDevices()) {
                                             if(remoteDevice.getType().getType().equals(next.get("dDeviceType"))){ 
-                                                Service tmpService = remoteDevice.findService(new UDAServiceType(next.get("dServiceType").toString()));
-                                                if(tmpService != null){//                                                    
-                                                    for (Action action : tmpService.getActions()) {
+//                                                System.out.println("co thay device "+remoteDevice.toString());
+                                                
+                                                Service tmpService=null;
+                                                for (RemoteService findService : remoteDevice.findServices()) {
+                                                    if(findService.getServiceType().getType().equals(next.get("dServiceType").toString())){
+                                                        tmpService=findService;
+                                                        break;
+                                                    }
+                                                }
+                                                if(tmpService != null){//int count=0;                                                  
+                                                    for (Action action : tmpService.getActions()) {                                                        
                                                         for (ActionArgument argument : action.getInputArguments()) {
                                                             if(argument.getRelatedStateVariableName().equals(next.get("dStateVariable").toString())){//                                                                
                                                                 executeAction(upnpService, tmpService, action.getName(), argument.getName(), next.get("dValue"));
                                                             }
                                                             else System.out.println("Khong the thuc thi!!!");                                                            
                                                         }
-                                                    }                                                
-                                                }                                                
-                                            }                                            
+                                                    }                                                    
+                                                } 
+//                                                else System.out.println("ko thay tmpService "+next.get("dServiceType").toString());
+                                                
+                                            }
+//                                            else System.out.println("ko thay DeviceType");
                                         }
                                     }                           
                                 }                                
