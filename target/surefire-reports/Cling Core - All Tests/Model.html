@@ -1,0 +1,1401 @@
+<html>
+<head>
+<title>TestNG:  Model</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Model</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>116/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Dec 20 22:46:33 ICT 2017</td>
+</tr>
+<tr><td>Total time:</td><td>1 seconds (1025 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.base64()'><b>base64</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.caseSensitivity()'><b>caseSensitivity</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.csvToString()'><b>csvToString</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.dateAndTime()'><b>dateAndTime</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.dateAndTimeWithZone()'><b>dateAndTimeWithZone</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findDevicesWithDeviceType()'><b>findDevicesWithDeviceType</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findDevicesWithUDN()'><b>findDevicesWithUDN</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findEmbeddedDevices()'><b>findEmbeddedDevices</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findRoot()'><b>findRoot</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findServiceTypes()'><b>findServiceTypes</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findServicesAll()'><b>findServicesAll</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findServicesFirst()'><b>findServicesFirst</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findServicesId()'><b>findServicesId</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DeviceGraphTest.findServicesType()'><b>findServicesType</b><br>Test class: org.fourthline.cling.test.model.DeviceGraphTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DeviceGraphTest@1adae5d</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.profile.DeviceDetailsProviderTest.headerRegexMatch()'><b>headerRegexMatch</b><br>Test class: org.fourthline.cling.test.model.profile.DeviceDetailsProviderTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.profile.DeviceDetailsProviderTest@12cbfa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IconTest.invalidIcons()'><b>invalidIcons</b><br>Test class: org.fourthline.cling.test.model.IconTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IconTest@1c68925</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.invalidIntegerValue()'><b>invalidIntegerValue</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.invalidStateVarDefaultValue()'><b>invalidStateVarDefaultValue</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersOne()'><b>invalidUnsignedIntegersOne</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td><div><pre>org.fourthline.cling.model.types.InvalidValueException: Can&apos;t convert string to number or not in range: 256
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByteDatatype.valueOf(UnsignedIntegerOneByteDatatype.java:28)
+	at org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersOne(DatatypesTest.java:74)
+Caused by: java.lang.NumberFormatException: Value must be between 0 and 255: 256
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.isInRange(UnsignedVariableInteger.java:77)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.setValue(UnsignedVariableInteger.java:66)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.&lt;init&gt;(UnsignedVariableInteger.java:62)
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByte.&lt;init&gt;(UnsignedIntegerOneByte.java:28)
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByteDatatype.valueOf(UnsignedIntegerOneByteDatatype.java:26)
+	... 28 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace23998265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace23998265'><pre>org.fourthline.cling.model.types.InvalidValueException: Can&apos;t convert string to number or not in range: 256
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByteDatatype.valueOf(UnsignedIntegerOneByteDatatype.java:28)
+	at org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersOne(DatatypesTest.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.NumberFormatException: Value must be between 0 and 255: 256
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.isInRange(UnsignedVariableInteger.java:77)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.setValue(UnsignedVariableInteger.java:66)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.&lt;init&gt;(UnsignedVariableInteger.java:62)
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByte.&lt;init&gt;(UnsignedIntegerOneByte.java:28)
+	at org.fourthline.cling.model.types.UnsignedIntegerOneByteDatatype.valueOf(UnsignedIntegerOneByteDatatype.java:26)
+	... 28 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersTwo()'><b>invalidUnsignedIntegersTwo</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td><div><pre>org.fourthline.cling.model.types.InvalidValueException: Can&apos;t convert string to number or not in range: 65536
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytesDatatype.valueOf(UnsignedIntegerTwoBytesDatatype.java:28)
+	at org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersTwo(DatatypesTest.java:80)
+Caused by: java.lang.NumberFormatException: Value must be between 0 and 65535: 65536
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.isInRange(UnsignedVariableInteger.java:77)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.setValue(UnsignedVariableInteger.java:66)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.&lt;init&gt;(UnsignedVariableInteger.java:62)
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytes.&lt;init&gt;(UnsignedIntegerTwoBytes.java:28)
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytesDatatype.valueOf(UnsignedIntegerTwoBytesDatatype.java:26)
+	... 28 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7636621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace7636621'><pre>org.fourthline.cling.model.types.InvalidValueException: Can&apos;t convert string to number or not in range: 65536
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytesDatatype.valueOf(UnsignedIntegerTwoBytesDatatype.java:28)
+	at org.fourthline.cling.test.model.DatatypesTest.invalidUnsignedIntegersTwo(DatatypesTest.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.NumberFormatException: Value must be between 0 and 65535: 65536
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.isInRange(UnsignedVariableInteger.java:77)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.setValue(UnsignedVariableInteger.java:66)
+	at org.fourthline.cling.model.types.UnsignedVariableInteger.&lt;init&gt;(UnsignedVariableInteger.java:62)
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytes.&lt;init&gt;(UnsignedIntegerTwoBytes.java:28)
+	at org.fourthline.cling.model.types.UnsignedIntegerTwoBytesDatatype.valueOf(UnsignedIntegerTwoBytesDatatype.java:26)
+	... 28 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseBrokenServiceId()'><b>parseBrokenServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseBrokenServiceType()'><b>parseBrokenServiceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseCallbackHeaderString()'><b>parseCallbackHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseCeytonInfiniTVServiceType()'><b>parseCeytonInfiniTVServiceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseContentRange()'><b>parseContentRange</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseContentTypeHeader()'><b>parseContentTypeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.parseDLNADoc()'><b>parseDLNADoc</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseDeviceType()'><b>parseDeviceType</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseDeviceTypeHeaderURI()'><b>parseDeviceTypeHeaderURI</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseDeviceUSNHeader()'><b>parseDeviceUSNHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseDeviceUSNHeaderStatic()'><b>parseDeviceUSNHeaderStatic</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseEscientDeviceType()'><b>parseEscientDeviceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseEventSequenceHeaderString()'><b>parseEventSequenceHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseEyeTVDeviceType()'><b>parseEyeTVDeviceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseEyeTVServiceType()'><b>parseEyeTVServiceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseEyeconServiceId()'><b>parseEyeconServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseHostHeader()'><b>parseHostHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseHostHeaderConstructor()'><b>parseHostHeaderConstructor</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInterfaceMacAddress()'><b>parseInterfaceMacAddress</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidCallbackHeaderString()'><b>parseInvalidCallbackHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseInvalidDLNADoc()'><b>parseInvalidDLNADoc</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidDeviceTypeHeader()'><b>parseInvalidDeviceTypeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidDeviceUSNHeader()'><b>parseInvalidDeviceUSNHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid device USN header value, Can&apos;t parse UDN::DeviceType from: uuid:MY-DEVICE-123--urn:schemas-upnp-org:device:MY-DEVICE-TYPE:1
+	at org.fourthline.cling.model.message.header.DeviceUSNHeader.setString(DeviceUSNHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidDeviceUSNHeader(HeaderParsingTest.java:99)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30247210", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace30247210'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid device USN header value, Can&apos;t parse UDN::DeviceType from: uuid:MY-DEVICE-123--urn:schemas-upnp-org:device:MY-DEVICE-TYPE:1
+	at org.fourthline.cling.model.message.header.DeviceUSNHeader.setString(DeviceUSNHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidDeviceUSNHeader(HeaderParsingTest.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidEXTHeader()'><b>parseInvalidEXTHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid EXT header, it has no value: MUST BE EMPTY STRING
+	at org.fourthline.cling.model.message.header.EXTHeader.setString(EXTHeader.java:32)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidEXTHeader(HeaderParsingTest.java:105)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace12087621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace12087621'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid EXT header, it has no value: MUST BE EMPTY STRING
+	at org.fourthline.cling.model.message.header.EXTHeader.setString(EXTHeader.java:32)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidEXTHeader(HeaderParsingTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidHostHeader()'><b>parseInvalidHostHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid HOST header value, can&apos;t parse port: foo.bar:abc - For input string: &quot;abc&quot;
+	at org.fourthline.cling.model.message.header.HostHeader.setString(HostHeader.java:50)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidHostHeader(HeaderParsingTest.java:139)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace8648110", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace8648110'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid HOST header value, can&apos;t parse port: foo.bar:abc - For input string: &quot;abc&quot;
+	at org.fourthline.cling.model.message.header.HostHeader.setString(HostHeader.java:50)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidHostHeader(HeaderParsingTest.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidLocationHeader()'><b>parseInvalidLocationHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid URI: unknown protocol: this
+	at org.fourthline.cling.model.message.header.LocationHeader.setString(LocationHeader.java:46)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidLocationHeader(HeaderParsingTest.java:145)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace26934279", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace26934279'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid URI: unknown protocol: this
+	at org.fourthline.cling.model.message.header.LocationHeader.setString(LocationHeader.java:46)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidLocationHeader(HeaderParsingTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMANHeader()'><b>parseInvalidMANHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid namespace in MAN header value: &quot;foo.bar&quot;; ns = baz
+	at org.fourthline.cling.model.message.header.MANHeader.setString(MANHeader.java:54)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMANHeader(HeaderParsingTest.java:151)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2994311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2994311'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid namespace in MAN header value: &quot;foo.bar&quot;; ns = baz
+	at org.fourthline.cling.model.message.header.MANHeader.setString(MANHeader.java:54)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMANHeader(HeaderParsingTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMXHeader()'><b>parseInvalidMXHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Can&apos;t parse MX seconds integer from: abc
+	at org.fourthline.cling.model.message.header.MXHeader.setString(MXHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMXHeader(HeaderParsingTest.java:200)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30723230", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace30723230'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Can&apos;t parse MX seconds integer from: abc
+	at org.fourthline.cling.model.message.header.MXHeader.setString(MXHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMXHeader(HeaderParsingTest.java:200)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMaxAgeHeader()'><b>parseInvalidMaxAgeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid cache-control value, can&apos;t parse max-age seconds: max-foo=123
+	at org.fourthline.cling.model.message.header.MaxAgeHeader.setString(MaxAgeHeader.java:44)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMaxAgeHeader(HeaderParsingTest.java:182)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace92623", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace92623'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid cache-control value, can&apos;t parse max-age seconds: max-foo=123
+	at org.fourthline.cling.model.message.header.MaxAgeHeader.setString(MaxAgeHeader.java:44)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidMaxAgeHeader(HeaderParsingTest.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidNTSHeader()'><b>parseInvalidNTSHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid NTS header value: foo
+	at org.fourthline.cling.model.message.header.NTSHeader.setString(NTSHeader.java:40)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidNTSHeader(HeaderParsingTest.java:206)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2606604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2606604'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid NTS header value: foo
+	at org.fourthline.cling.model.message.header.NTSHeader.setString(NTSHeader.java:40)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidNTSHeader(HeaderParsingTest.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidRootDeviceHeader()'><b>parseInvalidRootDeviceHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid root device NT header value: upnp:foodevice
+	at org.fourthline.cling.model.message.header.RootDeviceHeader.setString(RootDeviceHeader.java:31)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidRootDeviceHeader(HeaderParsingTest.java:212)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace22805895", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace22805895'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid root device NT header value: upnp:foodevice
+	at org.fourthline.cling.model.message.header.RootDeviceHeader.setString(RootDeviceHeader.java:31)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidRootDeviceHeader(HeaderParsingTest.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSTAllHeader()'><b>parseInvalidSTAllHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid ST header value (not ALL): ssdp:foo
+	at org.fourthline.cling.model.message.header.STAllHeader.setString(STAllHeader.java:31)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSTAllHeader(HeaderParsingTest.java:334)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace4092174", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace4092174'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid ST header value (not ALL): ssdp:foo
+	at org.fourthline.cling.model.message.header.STAllHeader.setString(STAllHeader.java:31)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSTAllHeader(HeaderParsingTest.java:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServerHeader()'><b>parseInvalidServerHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Missing &apos;UPnP/1.&apos; in server information: foo/1 baz/123 bar/2
+	at org.fourthline.cling.model.message.header.ServerHeader.setString(ServerHeader.java:50)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServerHeader(HeaderParsingTest.java:271)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32650583", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32650583'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Missing &apos;UPnP/1.&apos; in server information: foo/1 baz/123 bar/2
+	at org.fourthline.cling.model.message.header.ServerHeader.setString(ServerHeader.java:50)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServerHeader(HeaderParsingTest.java:271)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServiceTypeHeader()'><b>parseInvalidServiceTypeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServiceUSNHeader()'><b>parseInvalidServiceUSNHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid service USN header value, Can&apos;t parse UDN::ServiceType from: uuid:MY-SERVICE-123--urn:schemas-upnp-org:service:MY-SERVICE-TYPE:1
+	at org.fourthline.cling.model.message.header.ServiceUSNHeader.setString(ServiceUSNHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServiceUSNHeader(HeaderParsingTest.java:328)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace23522272", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace23522272'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid service USN header value, Can&apos;t parse UDN::ServiceType from: uuid:MY-SERVICE-123--urn:schemas-upnp-org:service:MY-SERVICE-TYPE:1
+	at org.fourthline.cling.model.message.header.ServiceUSNHeader.setString(ServiceUSNHeader.java:42)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidServiceUSNHeader(HeaderParsingTest.java:328)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSubscriptionIdHeaderString()'><b>parseInvalidSubscriptionIdHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid subscription ID header value, must start with &apos;uuid:&apos;: abc:123-123-123-123
+	at org.fourthline.cling.model.message.header.SubscriptionIdHeader.setString(SubscriptionIdHeader.java:34)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSubscriptionIdHeaderString(HeaderParsingTest.java:490)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace16208003", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace16208003'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid subscription ID header value, must start with &apos;uuid:&apos;: abc:123-123-123-123
+	at org.fourthline.cling.model.message.header.SubscriptionIdHeader.setString(SubscriptionIdHeader.java:34)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidSubscriptionIdHeaderString(HeaderParsingTest.java:490)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.parseInvalidTimeString()'><b>parseInvalidTimeString</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Can&apos;t parse time string: 00-00:11
+	at org.fourthline.cling.model.ModelUtil.fromTimeString(ModelUtil.java:192)
+	at org.fourthline.cling.test.model.UtilTest.parseInvalidTimeString(UtilTest.java:280)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace11655067", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace11655067'><pre>java.lang.IllegalArgumentException: Can&apos;t parse time string: 00-00:11
+	at org.fourthline.cling.model.ModelUtil.fromTimeString(ModelUtil.java:192)
+	at org.fourthline.cling.test.model.UtilTest.parseInvalidTimeString(UtilTest.java:280)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDADeviceTypeHeader()'><b>parseInvalidUDADeviceTypeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA device type header value, Can&apos;t parse UDA device type string (namespace/type/version): urn:foo-bar:device:!@#:123
+	at org.fourthline.cling.model.message.header.UDADeviceTypeHeader.setString(UDADeviceTypeHeader.java:44)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDADeviceTypeHeader(HeaderParsingTest.java:340)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace6917575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace6917575'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA device type header value, Can&apos;t parse UDA device type string (namespace/type/version): urn:foo-bar:device:!@#:123
+	at org.fourthline.cling.model.message.header.UDADeviceTypeHeader.setString(UDADeviceTypeHeader.java:44)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDADeviceTypeHeader(HeaderParsingTest.java:340)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDAServiceTypeHeader()'><b>parseInvalidUDAServiceTypeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA service type header value, Can&apos;t parse UDA service type string (namespace/type/version): urn:foo-bar:service:!@#:123
+	at org.fourthline.cling.model.message.header.UDAServiceTypeHeader.setString(UDAServiceTypeHeader.java:43)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDAServiceTypeHeader(HeaderParsingTest.java:355)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30897183", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace30897183'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA service type header value, Can&apos;t parse UDA service type string (namespace/type/version): urn:foo-bar:service:!@#:123
+	at org.fourthline.cling.model.message.header.UDAServiceTypeHeader.setString(UDAServiceTypeHeader.java:43)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDAServiceTypeHeader(HeaderParsingTest.java:355)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderPrefix()'><b>parseInvalidUDNHeaderPrefix</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA header value, must start with &apos;uuid:&apos;: MY-UUID-1234
+	at org.fourthline.cling.model.message.header.UDNHeader.setString(UDNHeader.java:34)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderPrefix(HeaderParsingTest.java:378)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace29011566", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace29011566'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA header value, must start with &apos;uuid:&apos;: MY-UUID-1234
+	at org.fourthline.cling.model.message.header.UDNHeader.setString(UDNHeader.java:34)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderPrefix(HeaderParsingTest.java:378)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderURN()'><b>parseInvalidUDNHeaderURN</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA header value, must not contain &apos;::urn&apos;: uuid:MY-UUID-1234::urn:foo-bar:baz
+	at org.fourthline.cling.model.message.header.UDNHeader.setString(UDNHeader.java:38)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderURN(HeaderParsingTest.java:384)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace20420434", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20420434'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid UDA header value, must not contain &apos;::urn&apos;: uuid:MY-UUID-1234::urn:foo-bar:baz
+	at org.fourthline.cling.model.message.header.UDNHeader.setString(UDNHeader.java:38)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUDNHeaderURN(HeaderParsingTest.java:384)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUSNRootDeviceHeader()'><b>parseInvalidUSNRootDeviceHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td><div><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid root device USN header value, must start with &apos;uuid:&apos; and end with &apos;::upnp:rootdevice&apos; but is &apos;uuid:MY-UUID-1234::upnp:rootfoo&apos;
+	at org.fourthline.cling.model.message.header.USNRootDeviceHeader.setString(USNRootDeviceHeader.java:36)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUSNRootDeviceHeader(HeaderParsingTest.java:390)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace33437702", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace33437702'><pre>org.fourthline.cling.model.message.header.InvalidHeaderException: Invalid root device USN header value, must start with &apos;uuid:&apos; and end with &apos;::upnp:rootdevice&apos; but is &apos;uuid:MY-UUID-1234::upnp:rootfoo&apos;
+	at org.fourthline.cling.model.message.header.USNRootDeviceHeader.setString(USNRootDeviceHeader.java:36)
+	at org.fourthline.cling.test.model.HeaderParsingTest.parseInvalidUSNRootDeviceHeader(HeaderParsingTest.java:390)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseKodakServiceId()'><b>parseKodakServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseMANHeaderNS()'><b>parseMANHeaderNS</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseMANHeaderNoNS()'><b>parseMANHeaderNoNS</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseMXHeader()'><b>parseMXHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseMaxAgeHeader()'><b>parseMaxAgeHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parsePragma()'><b>parsePragma</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseRange()'><b>parseRange</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatagramParsingTest.parseRoundtrip()'><b>parseRoundtrip</b><br>Test class: org.fourthline.cling.test.model.DatagramParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatagramParsingTest@1be98f5</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseServerHeader()'><b>parseServerHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseServiceNameAsServiceId()'><b>parseServiceNameAsServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseServiceType()'><b>parseServiceType</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseServiceTypeHeaderURI()'><b>parseServiceTypeHeaderURI</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseServiceUSNHeader()'><b>parseServiceUSNHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseServiceUSNHeaderStatic()'><b>parseServiceUSNHeaderStatic</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseSoapActionHeader()'><b>parseSoapActionHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseSoapActionHeaderQueryString()'><b>parseSoapActionHeaderQueryString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseSoapActionHeaderString()'><b>parseSoapActionHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseSubscriptionIdHeaderString()'><b>parseSubscriptionIdHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.parseTimeStrings()'><b>parseTimeStrings</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseTimeoutHeaderString()'><b>parseTimeoutHeaderString</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseUDADeviceType()'><b>parseUDADeviceType</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.parseUDADeviceTypeFractions()'><b>parseUDADeviceTypeFractions</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseUDADeviceTypeHeaderURI()'><b>parseUDADeviceTypeHeaderURI</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseUDAServiceType()'><b>parseUDAServiceType</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseUDAServiceTypeHeaderURI()'><b>parseUDAServiceTypeHeaderURI</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.HeaderParsingTest.parseUDNHeader()'><b>parseUDNHeader</b><br>Test class: org.fourthline.cling.test.model.HeaderParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.HeaderParsingTest@17f6480</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM1()'><b>printDOM1</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM2()'><b>printDOM2</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM3()'><b>printDOM3</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM4()'><b>printDOM4</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM5()'><b>printDOM5</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM6()'><b>printDOM6</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.printDOM7()'><b>printDOM7</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.readColonRelativePaths()'><b>readColonRelativePaths</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatagramParsingTest.readSource()'><b>readSource</b><br>Test class: org.fourthline.cling.test.model.DatagramParsingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatagramParsingTest@1be98f5</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.signedIntegers()'><b>signedIntegers</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.simpleCSV()'><b>simpleCSV</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.stringToCsv()'><b>stringToCsv</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.switchedMinimumMaximumValueRange()'><b>switchedMinimumMaximumValueRange</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.time()'><b>time</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.timeWithZone()'><b>timeWithZone</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.upperLowerCase()'><b>upperLowerCase</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IconTest.validIcons()'><b>validIcons</b><br>Test class: org.fourthline.cling.test.model.IconTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IconTest@1c68925</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.UtilTest.validUDAName()'><b>validUDAName</b><br>Test class: org.fourthline.cling.test.model.UtilTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.UtilTest@ac6e3</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.validUnsignedIntegers()'><b>validUnsignedIntegers</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validateAzureusServiceId()'><b>validateAzureusServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.LocalServiceBindingDatatypesTest.validateBinding()'><b>validateBinding</b><br>Test class: org.fourthline.cling.test.model.LocalServiceBindingDatatypesTest<br>Parameters: (LocalDevice) Identity: (DeviceIdentity) UDN: uuid:MY-DEVICE-123, Root: true</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.LocalServiceBindingDatatypesTest@1464ce8</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validateCallbackURILength()'><b>validateCallbackURILength</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validateIntelServiceId()'><b>validateIntelServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validateMSFTServiceType()'><b>validateMSFTServiceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validatePSAudioBridgeServiceId()'><b>validatePSAudioBridgeServiceId</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.IncompatibilityTest.validateSpacesInServiceType()'><b>validateSpacesInServiceType</b><br>Test class: org.fourthline.cling.test.model.IncompatibilityTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.IncompatibilityTest@16e8792</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.valueOfDouble()'><b>valueOfDouble</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.model.DatatypesTest.valueOfFloat()'><b>valueOfFloat</b><br>Test class: org.fourthline.cling.test.model.DatatypesTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.model.DatatypesTest@124753a</td></tr>
+</table><p>
+</body>
+</html>

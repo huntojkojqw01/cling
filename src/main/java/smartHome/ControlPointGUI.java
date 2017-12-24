@@ -55,10 +55,10 @@ public class ControlPointGUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ResultArea = new javax.swing.JTextArea();
         ValueTextField = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        DeviceLabel = new javax.swing.JLabel();
+        ServiceLabel = new javax.swing.JLabel();
+        ActionLabel = new javax.swing.JLabel();
+        ArgumentLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         SDeviceBox = new javax.swing.JComboBox<>();
         SServiceBox = new javax.swing.JComboBox<>();
@@ -104,13 +104,13 @@ public class ControlPointGUI extends javax.swing.JFrame {
         ResultArea.setRows(5);
         jScrollPane2.setViewportView(ResultArea);
 
-        jLabel9.setText("Device");
+        DeviceLabel.setText("Device");
 
-        jLabel10.setText("Service");
+        ServiceLabel.setText("Service");
 
-        jLabel11.setText("Action");
+        ActionLabel.setText("Action");
 
-        jLabel12.setText("Argument");
+        ArgumentLabel.setText("Argument");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,15 +135,15 @@ public class ControlPointGUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10)
+                            .addComponent(ServiceLabel)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(DeviceBox, 0, 179, Short.MAX_VALUE)
                                 .addComponent(ServiceBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ActionBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ArgumentBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))))
+                            .addComponent(DeviceLabel)
+                            .addComponent(ActionLabel)
+                            .addComponent(ArgumentLabel))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(103, 103, 103))
@@ -152,22 +152,22 @@ public class ControlPointGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addComponent(DeviceLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(DeviceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel10)
+                        .addComponent(ServiceLabel)
                         .addGap(1, 1, 1)
                         .addComponent(ServiceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
+                        .addComponent(ActionLabel)
                         .addGap(1, 1, 1)
                         .addComponent(ActionBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
-                        .addComponent(jLabel12)
+                        .addComponent(ArgumentLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ArgumentBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -217,11 +217,6 @@ public class ControlPointGUI extends javax.swing.JFrame {
         jLabel8.setText("THEN");
 
         STextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        STextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                STextFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -283,7 +278,7 @@ public class ControlPointGUI extends javax.swing.JFrame {
                         .addComponent(SetButton)
                         .addGap(114, 114, 114)
                         .addComponent(UnSetButton)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,10 +343,6 @@ public class ControlPointGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void STextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_STextFieldActionPerformed
         
     public javax.swing.JComboBox getDeviceBox(){return DeviceBox;}
     public javax.swing.JComboBox getServiceBox(){return ServiceBox;}
@@ -380,7 +371,11 @@ public class ControlPointGUI extends javax.swing.JFrame {
     
     public javax.swing.JButton getSetButton(){return SetButton;} 
     public javax.swing.JButton getUnSetButton(){return UnSetButton;}
-    public javax.swing.JTextArea getListArea(){return ListArea;} 
+    public javax.swing.JTextArea getListArea(){return ListArea;}
+    public javax.swing.JLabel getDeviceLabel(){return DeviceLabel;}
+    public javax.swing.JLabel getServiceLabel(){return ServiceLabel;}
+    public javax.swing.JLabel getActionLabel(){return ActionLabel;}
+    public javax.swing.JLabel getArgumentLabel(){return ArgumentLabel;}
     /**
      * @param args the command line arguments
      */
@@ -418,7 +413,9 @@ public class ControlPointGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ActionBox;
+    private javax.swing.JLabel ActionLabel;
     private javax.swing.JComboBox<String> ArgumentBox;
+    private javax.swing.JLabel ArgumentLabel;
     private javax.swing.JButton CallActionButton;
     private javax.swing.JCheckBox DCheckBox;
     private javax.swing.JComboBox<String> DDeviceBox;
@@ -427,6 +424,7 @@ public class ControlPointGUI extends javax.swing.JFrame {
     private javax.swing.JTextField DTextField;
     private javax.swing.JComboBox<String> DVariableBox;
     private javax.swing.JComboBox<String> DeviceBox;
+    private javax.swing.JLabel DeviceLabel;
     private javax.swing.JTextArea InfoArea;
     private javax.swing.JTextArea ListArea;
     private javax.swing.JTextArea ResultArea;
@@ -437,15 +435,13 @@ public class ControlPointGUI extends javax.swing.JFrame {
     private javax.swing.JTextField STextField;
     private javax.swing.JComboBox<String> SVariableBox;
     private javax.swing.JComboBox<String> ServiceBox;
+    private javax.swing.JLabel ServiceLabel;
     private javax.swing.JButton SetButton;
     private javax.swing.JButton UnSetButton;
     private javax.swing.JCheckBox ValueCheckBox;
     private javax.swing.JSpinner ValueSpinner;
     private javax.swing.JTextField ValueTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -453,7 +449,6 @@ public class ControlPointGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

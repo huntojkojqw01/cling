@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="71.547" tests="340" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
+    <property name="java.vm.version" value="25.151-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Han\Documents\NetBeansProjects\hero"/>
+    <property name="java.runtime.version" value="1.8.0_151-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.io.tmpdir" value="C:\Users\Han\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby2.3.0\bin;C:\Ruby23\bin;C:\Android\tools;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\Han"/>
+    <property name="user.timezone" value="Asia/Bangkok"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Han"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_151\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.8.0_151"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 8.2\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="parseRoundtrip" classname="org.fourthline.cling.test.model.DatagramParsingTest" time="0.177"/>
+  <testcase name="readSource" classname="org.fourthline.cling.test.model.DatagramParsingTest" time="0.007"/>
+  <testcase name="base64" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.043"/>
+  <testcase name="caseSensitivity" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="dateAndTime" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.013"/>
+  <testcase name="dateAndTimeWithZone" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="invalidUnsignedIntegersOne" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.001"/>
+  <testcase name="invalidUnsignedIntegersTwo" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.001"/>
+  <testcase name="parseDLNADoc" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="signedIntegers" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="simpleCSV" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.009"/>
+  <testcase name="time" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="timeWithZone" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="upperLowerCase" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="validUnsignedIntegers" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="valueOfDouble" classname="org.fourthline.cling.test.model.DatatypesTest" time="0.01"/>
+  <testcase name="valueOfFloat" classname="org.fourthline.cling.test.model.DatatypesTest" time="0"/>
+  <testcase name="validateBinding" classname="org.fourthline.cling.test.model.LocalServiceBindingDatatypesTest" time="0"/>
+  <testcase name="headerRegexMatch" classname="org.fourthline.cling.test.model.profile.DeviceDetailsProviderTest" time="0"/>
+  <testcase name="findDevicesWithDeviceType" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0.014"/>
+  <testcase name="findDevicesWithUDN" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="findEmbeddedDevices" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="findRoot" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0.002"/>
+  <testcase name="findServiceTypes" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0.014"/>
+  <testcase name="findServicesAll" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="findServicesFirst" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="findServicesId" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="findServicesType" classname="org.fourthline.cling.test.model.DeviceGraphTest" time="0"/>
+  <testcase name="csvToString" classname="org.fourthline.cling.test.model.UtilTest" time="0"/>
+  <testcase name="parseInvalidTimeString" classname="org.fourthline.cling.test.model.UtilTest" time="0"/>
+  <testcase name="parseTimeStrings" classname="org.fourthline.cling.test.model.UtilTest" time="0"/>
+  <testcase name="printDOM1" classname="org.fourthline.cling.test.model.UtilTest" time="0.202"/>
+  <testcase name="printDOM2" classname="org.fourthline.cling.test.model.UtilTest" time="0.002"/>
+  <testcase name="printDOM3" classname="org.fourthline.cling.test.model.UtilTest" time="0.002"/>
+  <testcase name="printDOM4" classname="org.fourthline.cling.test.model.UtilTest" time="0.001"/>
+  <testcase name="printDOM5" classname="org.fourthline.cling.test.model.UtilTest" time="0.023"/>
+  <testcase name="printDOM6" classname="org.fourthline.cling.test.model.UtilTest" time="0.002"/>
+  <testcase name="printDOM7" classname="org.fourthline.cling.test.model.UtilTest" time="0.006"/>
+  <testcase name="stringToCsv" classname="org.fourthline.cling.test.model.UtilTest" time="0"/>
+  <testcase name="validUDAName" classname="org.fourthline.cling.test.model.UtilTest" time="0"/>
+  <testcase name="parseCallbackHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseContentRange" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseContentTypeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0.002"/>
+  <testcase name="parseDeviceType" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseDeviceTypeHeaderURI" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseDeviceUSNHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseDeviceUSNHeaderStatic" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseEventSequenceHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseHostHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseHostHeaderConstructor" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInterfaceMacAddress" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidCallbackHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0.071"/>
+  <testcase name="parseInvalidDeviceTypeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidDeviceUSNHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidEXTHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidHostHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidLocationHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidMANHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0.018"/>
+  <testcase name="parseInvalidMXHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidMaxAgeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidNTSHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidRootDeviceHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidSTAllHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidServerHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidServiceTypeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidServiceUSNHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidSubscriptionIdHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidUDADeviceTypeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidUDAServiceTypeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidUDNHeaderPrefix" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidUDNHeaderURN" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseInvalidUSNRootDeviceHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseMANHeaderNS" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseMANHeaderNoNS" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseMXHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseMaxAgeHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parsePragma" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseRange" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseServerHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseServiceType" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseServiceTypeHeaderURI" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseServiceUSNHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseServiceUSNHeaderStatic" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseSoapActionHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0.004"/>
+  <testcase name="parseSoapActionHeaderQueryString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseSoapActionHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseSubscriptionIdHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseTimeoutHeaderString" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseUDADeviceType" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseUDADeviceTypeHeaderURI" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0.001"/>
+  <testcase name="parseUDAServiceType" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseUDAServiceTypeHeaderURI" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="parseUDNHeader" classname="org.fourthline.cling.test.model.HeaderParsingTest" time="0"/>
+  <testcase name="invalidIcons" classname="org.fourthline.cling.test.model.IconTest" time="0.004"/>
+  <testcase name="validIcons" classname="org.fourthline.cling.test.model.IconTest" time="0.012"/>
+  <testcase name="invalidIntegerValue" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="invalidStateVarDefaultValue" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseBrokenServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseBrokenServiceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="parseCeytonInfiniTVServiceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseEscientDeviceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseEyeTVDeviceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseEyeTVServiceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="parseEyeconServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="parseInvalidDLNADoc" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="parseKodakServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="parseServiceNameAsServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.002"/>
+  <testcase name="parseUDADeviceTypeFractions" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="readColonRelativePaths" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.008"/>
+  <testcase name="switchedMinimumMaximumValueRange" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="validateAzureusServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="validateCallbackURILength" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.282"/>
+  <testcase name="validateIntelServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="validateMSFTServiceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="validatePSAudioBridgeServiceId" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0.001"/>
+  <testcase name="validateSpacesInServiceType" classname="org.fourthline.cling.test.model.IncompatibilityTest" time="0"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationCSVTest" time="0.034"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationDatatypesTest" time="0.011"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationEnumTest" time="0"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationEnumTest" time="0"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationEnumTest" time="0"/>
+  <testcase name="invokeActions" classname="org.fourthline.cling.test.local.LocalActionInvocationNullTest" time="0.006"/>
+  <testcase name="byeByeBeforeAlive" classname="org.fourthline.cling.test.local.LocalDeviceBindingAdvertisementTest" time="2.635"/>
+  <testcase name="registerLocalDevice" classname="org.fourthline.cling.test.local.LocalDeviceBindingAdvertisementTest" time="2.664"/>
+  <testcase name="registerNonAdvertisedLocalDevice" classname="org.fourthline.cling.test.local.LocalDeviceBindingAdvertisementTest" time="2.588"/>
+  <testcase name="waitForAliveFlood" classname="org.fourthline.cling.test.local.LocalDeviceBindingAdvertisementTest" time="5.646"/>
+  <testcase name="waitForRefresh" classname="org.fourthline.cling.test.local.LocalDeviceBindingAdvertisementTest" time="2.595"/>
+  <testcase name="sendAliveMessages" classname="org.fourthline.cling.test.ssdp.AdvertisementTest" time="0.598"/>
+  <testcase name="sendByebyeMessages" classname="org.fourthline.cling.test.ssdp.AdvertisementTest" time="0.591"/>
+  <testcase name="receiveEmbeddedTriggersUpdate" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="3.111"/>
+  <testcase name="receivedAlreadyKnownLocalUDN" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="0.303"/>
+  <testcase name="receivedByeBye" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="0.107"/>
+  <testcase name="receivedNoLocation" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="0.208"/>
+  <testcase name="receivedNoMaxAge" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="0.236"/>
+  <testcase name="receivedNoUDN" classname="org.fourthline.cling.test.ssdp.NotifyTest" time="0.097"/>
+  <testcase name="addAndExpire" classname="org.fourthline.cling.test.ssdp.RegistryExpirationTest" time="3.111"/>
+  <testcase name="addAndUpdateAndExpire" classname="org.fourthline.cling.test.ssdp.RegistryExpirationTest" time="6.131"/>
+  <testcase name="addResourceAndExpire" classname="org.fourthline.cling.test.ssdp.RegistryExpirationTest" time="4.144"/>
+  <testcase name="addResourceAndMaintain" classname="org.fourthline.cling.test.ssdp.RegistryExpirationTest" time="2.131"/>
+  <testcase name="overrideAgeThenAddAndExpire" classname="org.fourthline.cling.test.ssdp.RegistryExpirationTest" time="6.144"/>
+  <testcase name="receivedInvalidMX" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.241"/>
+  <testcase name="receivedInvalidST" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.202"/>
+  <testcase name="receivedNonAdvertised" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.549"/>
+  <testcase name="receivedSearchAll" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.92"/>
+  <testcase name="receivedSearchDeviceType" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.687"/>
+  <testcase name="receivedSearchRoot" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.937"/>
+  <testcase name="receivedSearchServiceType" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.151"/>
+  <testcase name="receivedSearchUDN" classname="org.fourthline.cling.test.ssdp.SearchReceivedTest" time="0.779"/>
+  <testcase name="receiveEmbeddedTriggersUpdate" classname="org.fourthline.cling.test.ssdp.SearchResponseTest" time="3.214"/>
+  <testcase name="receivedAlreadyKnownLocalUDN" classname="org.fourthline.cling.test.ssdp.SearchResponseTest" time="0.264"/>
+  <testcase name="receivedInvalidSearchResponses" classname="org.fourthline.cling.test.ssdp.SearchResponseTest" time="0.429"/>
+  <testcase name="receivedValidResponse" classname="org.fourthline.cling.test.ssdp.SearchResponseTest" time="0.421"/>
+  <testcase name="registerAndRetrieveDescriptor" classname="org.fourthline.cling.test.resources.DeviceDescriptorRetrievalTest" time="0.424"/>
+  <testcase name="retrieveNonExistentDescriptor" classname="org.fourthline.cling.test.resources.DeviceDescriptorRetrievalTest" time="0.163"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.143"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.116"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.104"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.109"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.145"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.137"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.127"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.203"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.157"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.11"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.114"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.122"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.162"/>
+  <testcase name="readDefault" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.15"/>
+  <testcase name="readFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.179"/>
+  <testcase name="readFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.38"/>
+  <testcase name="readFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.149"/>
+  <testcase name="readFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.088"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.144"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.135"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.116"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.205"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.626"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.208"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.126"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.13"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.231"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.115"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.124"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.22"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.278"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.25"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.384"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.209"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.298"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.376"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.133"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.143"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.112"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.192"/>
+  <testcase name="readRecoveringStrict" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.152"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.162"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.119"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.125"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.106"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.167"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.142"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.118"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.139"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.128"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.111"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.097"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.098"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.101"/>
+  <testcase name="readSAX" classname="org.fourthline.cling.test.resources.InvalidUDA10DeviceDescriptorParsingTest" time="0.106"/>
+  <testcase name="registerAndRetrieveDescriptor" classname="org.fourthline.cling.test.resources.ServiceDescriptorRetrievalTest" time="0.134"/>
+  <testcase name="retrieveNonExistentDescriptor" classname="org.fourthline.cling.test.resources.ServiceDescriptorRetrievalTest" time="0.146"/>
+  <testcase name="readUDA10DescriptorDOM" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.106"/>
+  <testcase name="readUDA10DescriptorSAX" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.12"/>
+  <testcase name="readUDA10DescriptorWithEmptyURLBase" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.134"/>
+  <testcase name="readUDA10DescriptorWithURLBase" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.132"/>
+  <testcase name="readUDA10DescriptorWithURLBase2" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.104"/>
+  <testcase name="writeUDA10Descriptor" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.136"/>
+  <testcase name="writeUDA10DescriptorWithProvider" classname="org.fourthline.cling.test.resources.UDA10DeviceDescriptorParsingTest" time="0.116"/>
+  <testcase name="readUDA10DescriptorDOM" classname="org.fourthline.cling.test.resources.UDA10ServiceDescriptorParsingTest" time="0.005"/>
+  <testcase name="readUDA10DescriptorSAX" classname="org.fourthline.cling.test.resources.UDA10ServiceDescriptorParsingTest" time="0.02"/>
+  <testcase name="writeUDA10Descriptor" classname="org.fourthline.cling.test.resources.UDA10ServiceDescriptorParsingTest" time="0.004"/>
+  <testcase name="incomingRemoteCallClientInfo" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.102"/>
+  <testcase name="incomingRemoteCallControlURINotFound" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.129"/>
+  <testcase name="incomingRemoteCallGet" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.127"/>
+  <testcase name="incomingRemoteCallGetConcurrent" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="2.12"/>
+  <testcase name="incomingRemoteCallMethodException" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.134"/>
+  <testcase name="incomingRemoteCallNoContentType" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.171"/>
+  <testcase name="incomingRemoteCallQueryStateVariable" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.151"/>
+  <testcase name="incomingRemoteCallSet" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.159"/>
+  <testcase name="incomingRemoteCallWrongContentType" classname="org.fourthline.cling.test.control.ActionInvokeIncomingTest" time="0.145"/>
+  <testcase name="callLocalGet" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.128"/>
+  <testcase name="callLocalSetException" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.125"/>
+  <testcase name="callLocalWrongAction" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.115"/>
+  <testcase name="callRemoteGet" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.138"/>
+  <testcase name="callRemoteGetFailure" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.103"/>
+  <testcase name="callRemoteGetNoResponse" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.2"/>
+  <testcase name="callRemoteGetNotFoundFailure" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.131"/>
+  <testcase name="callRemoteNegativeValue" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.121"/>
+  <testcase name="callRemoteQueryStateVariable" classname="org.fourthline.cling.test.control.ActionInvokeOutgoingTest" time="0.139"/>
+  <testcase name="readEncodedRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.11"/>
+  <testcase name="readEncodedRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.136"/>
+  <testcase name="readEncodedRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.146"/>
+  <testcase name="readEncodedRequestWithAlias" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.138"/>
+  <testcase name="readEncodedRequestWithAlias" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.13"/>
+  <testcase name="readEncodedRequestWithAlias" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.124"/>
+  <testcase name="writeDecodedResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.118"/>
+  <testcase name="writeDecodedResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.124"/>
+  <testcase name="writeDecodedResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.151"/>
+  <testcase name="writeFailureReadFailure" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.145"/>
+  <testcase name="writeFailureReadFailure" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.123"/>
+  <testcase name="writeFailureReadFailure" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.15"/>
+  <testcase name="writeReadRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.198"/>
+  <testcase name="writeReadRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.162"/>
+  <testcase name="writeReadRequest" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.123"/>
+  <testcase name="writeReadResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.129"/>
+  <testcase name="writeReadResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.105"/>
+  <testcase name="writeReadResponse" classname="org.fourthline.cling.test.control.ActionXMLProcessingTest" time="0.119"/>
+  <testcase name="readRequestDefaultFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.112"/>
+  <testcase name="readRequestDefaultFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.119"/>
+  <testcase name="readRequestDefaultFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.122"/>
+  <testcase name="readRequestPull" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.105"/>
+  <testcase name="readRequestPull" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.094"/>
+  <testcase name="readRequestPull" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.101"/>
+  <testcase name="readRequestRecoverableFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.102"/>
+  <testcase name="readRequestRecoverableFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.105"/>
+  <testcase name="readRequestRecovering" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.113"/>
+  <testcase name="readRequestRecovering" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.108"/>
+  <testcase name="readRequestRecoveringFailure" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.113"/>
+  <testcase name="uppercaseOutputArguments" classname="org.fourthline.cling.test.control.InvalidActionXMLProcessingTest" time="0.014"/>
+  <testcase name="writeReadRequest" classname="org.fourthline.cling.test.gena.EventXMLProcessingTest" time="0.154"/>
+  <testcase name="writeReadRequestPull" classname="org.fourthline.cling.test.gena.EventXMLProcessingTest" time="0.11"/>
+  <testcase name="writeReadRequestRecovering" classname="org.fourthline.cling.test.gena.EventXMLProcessingTest" time="0.113"/>
+  <testcase name="subscriptionLifecycle" classname="org.fourthline.cling.test.gena.IncomingSubscriptionLifecycleTest" time="0.122"/>
+  <testcase name="subscriptionLifecycleFailedResponse" classname="org.fourthline.cling.test.gena.IncomingSubscriptionLifecycleTest" time="0.101"/>
+  <testcase name="readDefaultFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.112"/>
+  <testcase name="readPull" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.112"/>
+  <testcase name="readRecoverableFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.113"/>
+  <testcase name="readRecoverableFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.111"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.118"/>
+  <testcase name="readRecovering" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.135"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.144"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.168"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.137"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.173"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.466"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.001"/>
+  <testcase name="readRecoveringFailure" classname="org.fourthline.cling.test.gena.InvalidEventXMLProcessingTest" time="0.066"/>
+  <testcase name="subscriptionLifecycleMissedEvent" classname="org.fourthline.cling.test.gena.OutgoingSubscriptionFailureTest" time="0.159"/>
+  <testcase name="subscriptionLifecycleNetworkOff" classname="org.fourthline.cling.test.gena.OutgoingSubscriptionFailureTest" time="0.126"/>
+  <testcase name="subscriptionLifecycle" classname="org.fourthline.cling.test.gena.OutgoingSubscriptionLifecycleTest" time="0.203"/>
+  <testcase name="subscriptionLifecycleNotifyBeforeResponse" classname="org.fourthline.cling.test.gena.OutgoingSubscriptionLifecycleTest" time="1.51"/>
+  <testcase name="noSyncProtocol" classname="org.fourthline.cling.test.protocol.ProtocolFactoryTest" time="0.132"/>
+  <testcase name="receivingEvent" classname="org.fourthline.cling.test.protocol.ProtocolFactoryTest" time="0.142"/>
+  <testcase name="cleanupRemoteDevice" classname="example.registry.RegistryBrowseTest" time="0.151"/>
+  <testcase name="findDevice" classname="example.registry.RegistryBrowseTest" time="0.247"/>
+  <testcase name="findDeviceByType" classname="example.registry.RegistryBrowseTest" time="0.171"/>
+  <testcase name="findLocalDevice" classname="example.registry.RegistryBrowseTest" time="0.2"/>
+  <testcase name="findLocalDeviceInvalidRelativePath" classname="example.registry.RegistryBrowseTest" time="0.212"/>
+  <testcase name="invokeActions" classname="example.controlpoint.ActionCancellationTest" time="1.172"/>
+  <testcase name="validateBinding" classname="example.localservice.AllowedValueTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.AllowedValueTest" time="0"/>
+  <testcase name="invokeActions" classname="example.localservice.BasicBindingTest" time="0.001"/>
+  <testcase name="invokeActions" classname="example.localservice.BasicBindingTest" time="0.001"/>
+  <testcase name="invokeActions" classname="example.localservice.BasicBindingTest" time="0"/>
+  <testcase name="invokeActions" classname="example.localservice.BasicBindingTest" time="0.001"/>
+  <testcase name="validateBinding" classname="example.localservice.BasicBindingTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.BasicBindingTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.BasicBindingTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.BasicBindingTest" time="0"/>
+  <testcase name="invokeActions" classname="example.localservice.EnumTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.EnumTest" time="0"/>
+  <testcase name="testClient" classname="example.binarylight.BinaryLightTest" time="0.371"/>
+  <testcase name="testServer" classname="example.binarylight.BinaryLightTest" time="0.115"/>
+  <testcase name="invokeActions" classname="example.controlpoint.ActionInvocationTest" time="0.13"/>
+  <testcase name="invokeActions" classname="example.controlpoint.ActionInvocationTest" time="0.145"/>
+  <testcase name="invokeActions" classname="example.controlpoint.ActionInvocationTest" time="0.206"/>
+  <testcase name="invokeActionsWithAlias" classname="example.controlpoint.ActionInvocationTest" time="0.19"/>
+  <testcase name="invokeActionsWithAlias" classname="example.controlpoint.ActionInvocationTest" time="0.146"/>
+  <testcase name="invokeActionsWithAlias" classname="example.controlpoint.ActionInvocationTest" time="0.177"/>
+  <testcase name="bundleSeveralVariables" classname="example.localservice.EventProviderTest" time="0.188"/>
+  <testcase name="moderateMaxRate" classname="example.localservice.EventProviderTest" time="0.85"/>
+  <testcase name="moderateMinDelta" classname="example.localservice.EventProviderTest" time="0.165"/>
+  <testcase name="subscriptionLifecycleChangeSupport" classname="example.localservice.EventProviderTest" time="0.161"/>
+  <testcase name="subscriptionLifecycle" classname="example.localservice.EventProviderTest" time="0.144"/>
+  <testcase name="subscriptionLifecycle" classname="example.controlpoint.EventSubscriptionTest" time="0.15"/>
+  <testcase name="searchAll" classname="example.controlpoint.SearchExecuteTest" time="0.199"/>
+  <testcase name="searchDefaults" classname="example.controlpoint.SearchExecuteTest" time="0.214"/>
+  <testcase name="searchDeviceType" classname="example.controlpoint.SearchExecuteTest" time="0.173"/>
+  <testcase name="searchInvalidST" classname="example.controlpoint.SearchExecuteTest" time="0.169"/>
+  <testcase name="searchRoot" classname="example.controlpoint.SearchExecuteTest" time="0.185"/>
+  <testcase name="searchServiceType" classname="example.controlpoint.SearchExecuteTest" time="0.168"/>
+  <testcase name="searchUDN" classname="example.controlpoint.SearchExecuteTest" time="0.137"/>
+  <testcase name="invokeActions" classname="example.localservice.RemoteClientInfoTest" time="0.001"/>
+  <testcase name="validateBinding" classname="example.localservice.AllowedValueRangeTest" time="0"/>
+  <testcase name="validateBinding" classname="example.localservice.AllowedValueRangeTest" time="0"/>
+  <testcase name="failureQuickstartListener" classname="example.registry.RegistryListenerTest" time="0.146"/>
+  <testcase name="quickstartListener" classname="example.registry.RegistryListenerTest" time="0.142"/>
+  <testcase name="regularListener" classname="example.registry.RegistryListenerTest" time="0.146"/>
+  <testcase name="invokeActions" classname="example.localservice.StringConvertibleTest" time="0.004"/>
+  <testcase name="validateBinding" classname="example.localservice.StringConvertibleTest" time="0"/>
+</testsuite>

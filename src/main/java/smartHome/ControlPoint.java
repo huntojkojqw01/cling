@@ -37,6 +37,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     private final javax.swing.JTextField valueTextField;
     private final javax.swing.JButton callActionButton;
     private final javax.swing.JTextArea resultArea;
+    private final javax.swing.JLabel deviceLabel,serviceLabel,actionLabel,argumentLabel;
     //==============================================
     private javax.swing.JCheckBox dCheckBox;
     private javax.swing.JComboBox<String> dDeviceBox;
@@ -82,14 +83,19 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         valueTextField = this.getTextField();
         callActionButton = this.getCallActionButton();
         resultArea = this.getResultArea();
-        deviceBox.setVisible(false);
-        serviceBox.setVisible(false);       
-        actionBox.setVisible(false);
-        argumentBox.setVisible(false);
-        valueCheckBox.setVisible(false);
-        valueSpinner.setVisible(false);
-        valueTextField.setVisible(false);
-        //=============================
+        deviceLabel= this.getDeviceLabel();
+        serviceLabel=this.getServiceLabel();
+        actionLabel=this.getActionLabel();
+        argumentLabel=this.getArgumentLabel();
+        //====================================
+//        deviceBox.setVisible(false);
+//        serviceBox.setVisible(false);       
+//        actionBox.setVisible(false);
+//        argumentBox.setVisible(false);
+//        valueCheckBox.setVisible(false);
+//        valueSpinner.setVisible(false);
+//        valueTextField.setVisible(false);
+//        //=============================
         dDeviceBox=this.getDDeviceBox();
         dServiceBox=this.getDServiceBox();
         dVariableBox=this.getDVariableBox();
@@ -259,12 +265,21 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
                 UnSetButtonActionPerformed(evt);
             }
         });
+        //======================================
+        deviceBox.setVisible(false);deviceLabel.setVisible(false);
+        serviceBox.setVisible(false);serviceLabel.setVisible(false);
+        actionBox.setVisible(false);actionLabel.setVisible(false);
+        argumentBox.setVisible(false);argumentLabel.setVisible(false);
+        valueCheckBox.setVisible(false);
+        valueSpinner.setVisible(false);
+        valueTextField.setVisible(false);
+        callActionButton.setVisible(false);
     }
     
     private void DeviceBoxActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         if(deviceBox.getSelectedItem()!=null){            
-            deviceBox.setVisible(true);        
+            deviceBox.setVisible(true);deviceLabel.setVisible(true);
             gdevice = upnpService.getRegistry().getRemoteDevice((UDN) deviceBox.getSelectedItem(), rootPaneCheckingEnabled);
     //        System.out.println(remoteDevice);            
             infoArea.setText(getInfoDevice(gdevice));
@@ -275,7 +290,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }        
         }
         else{
-            deviceBox.setVisible(false);
+            deviceBox.setVisible(false);deviceLabel.setVisible(false);
         }
     }
     
@@ -283,7 +298,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         // TODO add your handling code here:
         actionBox.removeAllItems();
         if(serviceBox.getSelectedItem()!=null){
-            serviceBox.setVisible(true);      
+            serviceBox.setVisible(true);serviceLabel.setVisible(true);      
             gservice = gdevice.findService(new UDAServiceId(serviceBox.getSelectedItem().toString()));
 //            System.out.println(gservice);
             
@@ -294,7 +309,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
         }
         else{
-            serviceBox.setVisible(false);
+            serviceBox.setVisible(false);serviceLabel.setVisible(false);
         }
     }                                          
 
@@ -302,7 +317,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         // TODO add your handling code here:
         argumentBox.removeAllItems();
         if(actionBox.getSelectedItem()!=null){
-            actionBox.setVisible(true);
+            actionBox.setVisible(true);actionLabel.setVisible(true);
+            callActionButton.setVisible(true);
             gaction = gservice.getAction(actionBox.getSelectedItem().toString());            
             
             if(gaction!=null){                
@@ -312,7 +328,8 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
         }
         else{
-            actionBox.setVisible(false);
+            actionBox.setVisible(false);actionLabel.setVisible(false);
+            callActionButton.setVisible(false);
         }
     }                                         
 
@@ -320,7 +337,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
         // TODO add your handling code here:
         
         if(argumentBox.getSelectedItem()!=null){
-            argumentBox.setVisible(true);            
+            argumentBox.setVisible(true);argumentLabel.setVisible(true);            
             gargument = gaction.getInputArgument(argumentBox.getSelectedItem().toString());            
             if(gargument!=null){
                 Class argumentClass = gargument.getDatatype().getClass();
@@ -347,7 +364,7 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
             }
         }
         else{
-            argumentBox.setVisible(false);
+            argumentBox.setVisible(false);argumentLabel.setVisible(false);
             valueSpinner.setVisible(false);
             valueCheckBox.setVisible(false);
             valueTextField.setVisible(false);
@@ -388,21 +405,29 @@ public class ControlPoint extends ControlPointGUI implements Runnable{
     
     private void DeviceBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                         
         // TODO add your handling code here:
-        serviceBox.setVisible(deviceBox.isVisible());        
+//        System.out.println("device Box "+deviceBox.isVisible());
+        serviceBox.setVisible(deviceBox.isVisible());
+        deviceLabel.setVisible(deviceBox.isVisible());
     }                                        
 
     private void ServiceBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                          
         // TODO add your handling code here:
+//        System.out.println("service Box "+serviceBox.isVisible());
         actionBox.setVisible(serviceBox.isVisible());
+        serviceLabel.setVisible(serviceBox.isVisible());
     }                                         
 
     private void ActionBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                         
         // TODO add your handling code here:
+//        System.out.println("action Box "+actionBox.isVisible());
         argumentBox.setVisible(actionBox.isVisible());
+        actionLabel.setVisible(actionBox.isVisible());
     }                                        
 
     private void ArgumentBoxPropertyChange(java.beans.PropertyChangeEvent evt) {                                           
-        // TODO add your handling code here:       
+        // TODO add your handling code here:
+//        System.out.println("argument Box "+argumentBox.isVisible());
+        argumentLabel.setVisible(argumentBox.isVisible());
     }
     
     private void SVariableBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             

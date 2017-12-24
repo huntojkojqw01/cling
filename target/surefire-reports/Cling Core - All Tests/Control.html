@@ -1,0 +1,657 @@
+<html>
+<head>
+<title>TestNG:  Control</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Control</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>48/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Dec 20 22:47:37 ICT 2017</td>
+</tr>
+<tr><td>Total time:</td><td>8 seconds (8080 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callLocalGet()'><b>callLocalGet</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callLocalSetException()'><b>callLocalSetException</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callLocalWrongAction()'><b>callLocalWrongAction</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteGet()'><b>callRemoteGet</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteGetFailure()'><b>callRemoteGetFailure</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteGetNoResponse()'><b>callRemoteGetNoResponse</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteGetNotFoundFailure()'><b>callRemoteGetNotFoundFailure</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteNegativeValue()'><b>callRemoteNegativeValue</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeOutgoingTest.callRemoteQueryStateVariable()'><b>callRemoteQueryStateVariable</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeOutgoingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeOutgoingTest@15d3402</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallClientInfo()'><b>incomingRemoteCallClientInfo</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallControlURINotFound()'><b>incomingRemoteCallControlURINotFound</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallGet()'><b>incomingRemoteCallGet</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallGetConcurrent()'><b>incomingRemoteCallGetConcurrent</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>2</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallMethodException()'><b>incomingRemoteCallMethodException</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallNoContentType()'><b>incomingRemoteCallNoContentType</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallQueryStateVariable()'><b>incomingRemoteCallQueryStateVariable</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallSet()'><b>incomingRemoteCallSet</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionInvokeIncomingTest.incomingRemoteCallWrongContentType()'><b>incomingRemoteCallWrongContentType</b><br>Test class: org.fourthline.cling.test.control.ActionInvokeIncomingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionInvokeIncomingTest@e2cbe0</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequest()'><b>readEncodedRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@701274</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequest()'><b>readEncodedRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@1c9d689</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequest()'><b>readEncodedRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@154a4bf</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequestWithAlias()'><b>readEncodedRequestWithAlias</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@379589</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequestWithAlias()'><b>readEncodedRequestWithAlias</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@fcd809</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.readEncodedRequestWithAlias()'><b>readEncodedRequestWithAlias</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@15c2241</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure()'><b>readRequestDefaultFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_missing_envelope.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: java.lang.RuntimeException: Response root element was not &apos;Envelope&apos;
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+Caused by: java.lang.RuntimeException: Response root element was not &apos;Envelope&apos;
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyElement(SOAPActionProcessorImpl.java:254)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:136)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30980616", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace30980616'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: java.lang.RuntimeException: Response root element was not &apos;Envelope&apos;
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.RuntimeException: Response root element was not &apos;Envelope&apos;
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyElement(SOAPActionProcessorImpl.java:254)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:136)
+	... 29 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure()'><b>readRequestDefaultFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_missing_action_namespace.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+Caused by: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readActionRequestElement(SOAPActionProcessorImpl.java:307)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyRequest(SOAPActionProcessorImpl.java:220)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:138)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace31637605", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace31637605'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readActionRequestElement(SOAPActionProcessorImpl.java:307)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyRequest(SOAPActionProcessorImpl.java:220)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:138)
+	... 29 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure()'><b>readRequestDefaultFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_invalid_action_namespace.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [u:SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+Caused by: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [u:SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readActionRequestElement(SOAPActionProcessorImpl.java:307)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyRequest(SOAPActionProcessorImpl.java:220)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:138)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace16669760", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace16669760'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [u:SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestDefaultFailure(InvalidActionXMLProcessingTest.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.fourthline.cling.model.UnsupportedDataException: Illegal or missing namespace on action request element: [u:SetSomeValue: null]
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readActionRequestElement(SOAPActionProcessorImpl.java:307)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBodyRequest(SOAPActionProcessorImpl.java:220)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:138)
+	... 29 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestPull()'><b>readRequestPull</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_missing_envelope.xml</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestPull()'><b>readRequestPull</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_missing_action_namespace.xml</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestPull()'><b>readRequestPull</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_invalid_action_namespace.xml</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure()'><b>readRequestRecoverableFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_no_entityencoding.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 31; The reference to entity &quot;bar&quot; must end with the &apos;;&apos; delimiter.
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure(InvalidActionXMLProcessingTest.java:90)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 31; The reference to entity &quot;bar&quot; must end with the &apos;;&apos; delimiter.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEntityReference(XMLDocumentFragmentScannerImpl.java:1850)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3061)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:134)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace6252259", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace6252259'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 31; The reference to entity &quot;bar&quot; must end with the &apos;;&apos; delimiter.
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure(InvalidActionXMLProcessingTest.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 31; The reference to entity &quot;bar&quot; must end with the &apos;;&apos; delimiter.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEntityReference(XMLDocumentFragmentScannerImpl.java:1850)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3061)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:134)
+	... 29 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure()'><b>readRequestRecoverableFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_wrong_termination.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 3; The element type &quot;s:Envelope&quot; must be terminated by the matching end-tag &quot;&lt;/s:Envelope&gt;&quot;.
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure(InvalidActionXMLProcessingTest.java:90)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 3; The element type &quot;s:Envelope&quot; must be terminated by the matching end-tag &quot;&lt;/s:Envelope&gt;&quot;.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:134)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace12635565", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace12635565'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 3; The element type &quot;s:Envelope&quot; must be terminated by the matching end-tag &quot;&lt;/s:Envelope&gt;&quot;.
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:141)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoverableFailure(InvalidActionXMLProcessingTest.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 9; columnNumber: 3; The element type &quot;s:Envelope&quot; must be terminated by the matching end-tag &quot;&lt;/s:Envelope&gt;&quot;.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.fourthline.cling.transport.impl.SOAPActionProcessorImpl.readBody(SOAPActionProcessorImpl.java:134)
+	... 29 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecovering()'><b>readRequestRecovering</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_no_entityencoding.xml</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecovering()'><b>readRequestRecovering</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/request_wrong_termination.xml</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoveringFailure()'><b>readRequestRecoveringFailure</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest<br>Parameters: /invalidxml/control/unrecoverable/naim_unity.xml</td>
+<td><div><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xmlpull.v1.XmlPullParserException: PI must not start with xml (position:unknown @16:23 in java.io.InputStreamReader@171beb3) 
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBody(PullSOAPActionProcessorImpl.java:58)
+	at org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl.readBody(RecoveringSOAPActionProcessorImpl.java:59)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoveringFailure(InvalidActionXMLProcessingTest.java:96)
+Caused by: org.xmlpull.v1.XmlPullParserException: PI must not start with xml (position:unknown @16:23 in java.io.InputStreamReader@171beb3) 
+	at org.kxml2.io.KXmlParser.exception(Unknown Source)
+	at org.kxml2.io.KXmlParser.error(Unknown Source)
+	at org.kxml2.io.KXmlParser.parseLegacy(Unknown Source)
+	at org.kxml2.io.KXmlParser.nextImpl(Unknown Source)
+	at org.kxml2.io.KXmlParser.next(Unknown Source)
+	at org.seamless.xml.XmlPullParserUtils.searchTag(XmlPullParserUtils.java:91)
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBodyRequest(PullSOAPActionProcessorImpl.java:78)
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBody(PullSOAPActionProcessorImpl.java:56)
+	... 30 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace19834777", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace19834777'><pre>org.fourthline.cling.model.UnsupportedDataException: Can&apos;t transform message payload: org.xmlpull.v1.XmlPullParserException: PI must not start with xml (position:unknown @16:23 in java.io.InputStreamReader@171beb3) 
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBody(PullSOAPActionProcessorImpl.java:58)
+	at org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl.readBody(RecoveringSOAPActionProcessorImpl.java:59)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequest(InvalidActionXMLProcessingTest.java:166)
+	at org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.readRequestRecoveringFailure(InvalidActionXMLProcessingTest.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.xmlpull.v1.XmlPullParserException: PI must not start with xml (position:unknown @16:23 in java.io.InputStreamReader@171beb3) 
+	at org.kxml2.io.KXmlParser.exception(Unknown Source)
+	at org.kxml2.io.KXmlParser.error(Unknown Source)
+	at org.kxml2.io.KXmlParser.parseLegacy(Unknown Source)
+	at org.kxml2.io.KXmlParser.nextImpl(Unknown Source)
+	at org.kxml2.io.KXmlParser.next(Unknown Source)
+	at org.seamless.xml.XmlPullParserUtils.searchTag(XmlPullParserUtils.java:91)
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBodyRequest(PullSOAPActionProcessorImpl.java:78)
+	at org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl.readBody(PullSOAPActionProcessorImpl.java:56)
+	... 30 more
+</pre></div></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.InvalidActionXMLProcessingTest.uppercaseOutputArguments()'><b>uppercaseOutputArguments</b><br>Test class: org.fourthline.cling.test.control.InvalidActionXMLProcessingTest</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.InvalidActionXMLProcessingTest@feb3fa</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeDecodedResponse()'><b>writeDecodedResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@12b08d6</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeDecodedResponse()'><b>writeDecodedResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@555ebf</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeDecodedResponse()'><b>writeDecodedResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@ebc363</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeFailureReadFailure()'><b>writeFailureReadFailure</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@1752059</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeFailureReadFailure()'><b>writeFailureReadFailure</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@e9fd99</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeFailureReadFailure()'><b>writeFailureReadFailure</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@41ed1d</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadRequest()'><b>writeReadRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@d9d12d</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadRequest()'><b>writeReadRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@425407</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadRequest()'><b>writeReadRequest</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@1bc63a3</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadResponse()'><b>writeReadResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.SOAPActionProcessorImpl@2657cc</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadResponse()'><b>writeReadResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.PullSOAPActionProcessorImpl@6cb05c</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+<tr>
+<td title='org.fourthline.cling.test.control.ActionXMLProcessingTest.writeReadResponse()'><b>writeReadResponse</b><br>Test class: org.fourthline.cling.test.control.ActionXMLProcessingTest<br>Parameters: org.fourthline.cling.transport.impl.RecoveringSOAPActionProcessorImpl@a4337a</td>
+<td></td>
+<td>0</td>
+<td>org.fourthline.cling.test.control.ActionXMLProcessingTest@1565ec2</td></tr>
+</table><p>
+</body>
+</html>
